@@ -55,7 +55,7 @@ export const ProductOnSale = () => {
           <ProductStock stock={107} sold={3459} />
           <CountDown />
           <h3 className="text-2xl font-bold mt-4">Size</h3>
-          <ChoseOne render={renderSizeFn} />
+          <ChoseOne render={renderSizeFn} type="size" />
         </ProductSelection>
       </div>
       <RelatedProduct />

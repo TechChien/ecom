@@ -69,9 +69,20 @@ export const ProductSelection = ({ children, ...props }) => {
     information: { brands, activity, material, gender },
   } = props;
 
+  console.log(selectState);
+
   const handleAddToCart = (e) => {
     const { color, size, amount } = selectState;
-    const subtitle = `Color in ${color} and size in ${size}`;
+    let subtitle = "";
+
+    if (color != "") {
+      subtitle += `Color in ${color}`;
+    }
+
+    if (size != "") {
+      subtitle += ` size in ${size}`;
+    }
+
     dispatch(addCart({ productId, amount, subtitle }));
   };
 
