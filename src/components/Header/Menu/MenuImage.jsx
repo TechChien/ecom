@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { MenuPopup } from "./MenuPopup";
+import { Badge } from "./Badge";
 
 export const MenuImage = ({ src, alt, css, item }) => {
   const [height, setHeight] = useState(0);
@@ -19,9 +20,7 @@ export const MenuImage = ({ src, alt, css, item }) => {
   return (
     <li ref={ref} className="relative">
       <img onClick={handleClick} className={css} src={src} alt={alt} />
-      <span className="absolute top-0 -right-2  w-4 h-4  rounded-full bg-red-400 text-sm flex justify-center items-center">
-        {4}
-      </span>
+      <Badge />
       {open ? (
         <MenuPopup top={height} parentImg={item} hideFn={closePop} />
       ) : null}

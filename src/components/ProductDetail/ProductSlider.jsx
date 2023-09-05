@@ -7,10 +7,10 @@ import {
   faCircleLeft,
 } from "@fortawesome/free-regular-svg-icons";
 
-import shoe1 from "../../assets/products/shoe1.jpg";
-import shoe2 from "../../assets/products/shoe1-1.jpg";
-import shoe3 from "../../assets/products/shoe5.jpg";
-import shoe4 from "../../assets/products/shoe1-3.jpg";
+// import shoe1 from "../../assets/products/shoe1.jpg";
+// import shoe2 from "../../assets/products/shoe1-1.jpg";
+// import shoe3 from "../../assets/products/shoe5.jpg";
+// import shoe4 from "../../assets/products/shoe1-3.jpg";
 
 const calculateCentralImage = (totalImageCount, curPos) => {
   if (curPos === 0) {

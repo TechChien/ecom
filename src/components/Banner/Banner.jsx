@@ -1,35 +1,35 @@
 import { UpperBanner } from "./UpperBanner";
 import { LowerBanner } from "./LowerBanner";
 
-import banner1 from "../../assets/banner/banner1.jpg";
-import banner2 from "../../assets/banner/banner2.jpg";
-import procat1 from "../../assets/banner/procat1.jpg";
-import procat2 from "../../assets/banner/procat2.jpg";
-import procat3 from "../../assets/banner/procat3.jpg";
+// import banner1 from "../../assets/banner/banner1.jpg";
+// import banner2 from "../../assets/banner/banner2.jpg";
+// import procat1 from "../../assets/banner/procat1.jpg";
+// import procat2 from "../../assets/banner/procat2.jpg";
+// import procat3 from "../../assets/banner/procat3.jpg";
 
 const upperBannerItems = [
   {
     category: "Brutal Sale",
     title: "Get the deal in here",
     subtitle: "Living Room Chair",
-    srcImg: banner1,
+    srcImg: "banner1",
   },
   {
     category: "Brutal Sale",
     title: "Discount everyday",
     subtitle: "Office Outfit",
-    srcImg: banner2,
+    srcImg: "banner2",
   },
 ];
 
 const lowerBannerItems = [
   {
-    srcImg: procat1,
+    srcImg: "procat1",
     title: "Beauty",
     list: ["Makeup", "Skin Care", "Hair Care", "Fragrance", "Foot & Hand Care"],
   },
   {
-    srcImg: procat2,
+    srcImg: "procat2",
     title: "Gatdets",
     list: [
       "Camera",
@@ -40,7 +40,7 @@ const lowerBannerItems = [
     ],
   },
   {
-    srcImg: procat3,
+    srcImg: "procat3",
     title: "Home Decor",
     list: ["Kitchen", "Dining Room", "Pantry", "Great Room", "Breakfast Nook"],
   },

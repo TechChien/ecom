@@ -1,3 +1,5 @@
+import { ImageWindow } from "../Trending/ImageWindow";
+
 export const UpperBanner = ({ ...props }) => {
   const { category, title, subtitle, srcImg } = props;
   return (
@@ -17,8 +19,14 @@ export const UpperBanner = ({ ...props }) => {
             Shop Now
           </button>
         </div>
+        <div></div>
         <div className=" h-full">
-          <img src={srcImg} className="h-full" />
+          <ImageWindow
+            bgImg={srcImg}
+            heart={false}
+            hover={false}
+            imageSrcPath="/src/assets/banner/"
+          />
         </div>
       </div>
     </div>
