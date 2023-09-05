@@ -1,5 +1,3 @@
-import { Heart } from "./Heart";
-
 import { ProductPrice } from "./ProductPrice";
 import { ProductTitle } from "./ProductTitle";
 import { Stars } from "./Stars";

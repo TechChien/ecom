@@ -18,11 +18,15 @@ export const ProductOnSale = () => {
   const images = [apparel4, apparel5, apparel6];
 
   const product = {
-    title: "Happy Sailed Womens Summer Boho Floral",
+    productId: 4,
     score: 5,
-    comments: 2548,
-    price: "129.99",
-    originalPrice: "189.90",
+    comments: 10,
+    title: "Womens Summer Boho Floral",
+    price: "118.9",
+    originalPrice: "189.9",
+    sold: 2109,
+    stock: 179,
+    bgImg: "apparel4",
     information: {
       brands: "Zara",
       activity: "Formal",

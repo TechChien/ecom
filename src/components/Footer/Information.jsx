@@ -55,8 +55,8 @@ export const Information = () => {
         <div className="w-full flex">
           {infoItems.map((info) => (
             <div className="w-1/4" key={info.title}>
-              <h1 className="text-xl font-bold text-black">{info.title}</h1>
-              <ul className="flex flex-col gap-3 mt-3">
+              <h1 className="text-md font-bold text-black">{info.title}</h1>
+              <ul className="flex flex-col text-sm gap-3 mt-3">
                 {info.list.map((item) => (
                   <li className="hover:text-white" key={item}>
                     {item}

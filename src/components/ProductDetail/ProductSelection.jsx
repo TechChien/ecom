@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShareNodes, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { addCart } from "../../redux/reducer/cartSlice";
 
 import { Stars } from "../Trending/Stars";
 import { ProductPrice } from "../Trending/ProductPrice";
@@ -21,8 +23,44 @@ const dataItems = [
   ["XL", "93", "77.5", "10.3"],
 ];
 
+import { useReducer } from "react";
+import { produce } from "immer";
+import selctContext from "./selectContext";
+
+const selectReducer = (state, action) => {
+  console.log(action);
+  switch (action.type) {
+    case "color":
+      return produce(state, (draft) => {
+        draft.color = action.payload;
+      });
+      break;
+    case "size":
+      return produce(state, (draft) => {
+        draft.size = action.payload;
+      });
+      break;
+    case "number":
+      return produce(state, (draft) => {
+        draft.amount = action.payload;
+      });
+
+    default:
+      return state;
+  }
+};
+
 export const ProductSelection = ({ children, ...props }) => {
+  const [selectState, selectDispatch] = useReducer(selectReducer, {
+    color: "",
+    size: "",
+    amount: 1,
+  });
+
+  const dispatch = useDispatch();
+
   const {
+    productId,
     title,
     comments,
     score,
@@ -31,7 +69,11 @@ export const ProductSelection = ({ children, ...props }) => {
     information: { brands, activity, material, gender },
   } = props;
 
-  // console.log(props);
+  const handleAddToCart = (e) => {
+    const { color, size, amount } = selectState;
+    const subtitle = `Color in ${color} and size in ${size}`;
+    dispatch(addCart({ productId, amount, subtitle }));
+  };
 
   return (
     <div className="w-1/2">
@@ -41,19 +83,21 @@ export const ProductSelection = ({ children, ...props }) => {
         In Stock
       </span>
       <ProductPrice {...{ price, originalPrice }} />
+      <selctContext.Provider value={{ selectState, selectDispatch }}>
+        {children}
 
-      {children}
-
-      <div className="flex gap-4 items-center mt-6">
-        <div className="p-4 border-slate-300 flex justify-center items-center gap-6 border rounded-xl w-1/3">
-          <NumberPicker />
+        <div className="flex gap-4 items-center mt-6">
+          <div className="p-4 border-slate-300 flex justify-center items-center gap-6 border rounded-xl w-1/3">
+            <NumberPicker />
+          </div>
+          <button
+            onClick={handleAddToCart}
+            className="w-full py-4 bg-red-500 rounded-full text-2xl text-white hover:bg-red-400 "
+          >
+            Add to Cart
+          </button>
         </div>
-
-        <button className="w-full py-4 bg-red-500 rounded-full text-2xl text-white hover:bg-red-400 ">
-          Add to Cart
-        </button>
-      </div>
-
+      </selctContext.Provider>
       <div className="flex gap-6 mt-12">
         <div className="flex gap-2 cursor-pointer">
           <FontAwesomeIcon className="text-3xl " icon={faHeart} />

@@ -9,16 +9,17 @@ export const LowerBanner = ({ ...props }) => {
   return (
     <div className="col-span-2 border rounded-md border-slate-300">
       <div className="w-full h-[20rem] flex justify-center">
-        <ImageWindow
-          bgImg={srcImg}
-          heart={false}
-          hover={false}
-          imageSrcPath="/src/assets/banner/"
-        />
-
+        <div className="w-1/2 h-full">
+          <ImageWindow
+            bgImg={srcImg}
+            heart={false}
+            hover={false}
+            imageSrcPath="/src/assets/banner/"
+          />
+        </div>
         {/* <img src={srcImg} className="h-full" /> */}
-        <div className="p-8 ps-16">
-          <h1 className="text-2xl font-bold">{title}</h1>
+        <div className="p-4 ps-8">
+          <h1 className="text-xl font-bold">{title}</h1>
           <ul className="flex flex-col gap-2 mt-2">
             {list.map((l) => (
               <li key={l}>{l}</li>

@@ -1,30 +1,3 @@
-// const translateX = [
-//   [
-//     "translate-x-0",
-//     "-translate-x-[100%]",
-//     "-translate-x-[200%]",
-//     "-translate-x-[300%]",
-//   ],
-//   [
-//     "translate-x-full",
-//     "translate-x-0",
-//     "-translate-x-[100%]",
-//     "-translate-x-[200%]",
-//   ],
-//   [
-//     "translate-x-[200%]",
-//     "translate-x-full",
-//     "translate-x-0",
-//     "-translate-x-[100%]",
-//   ],
-//   [
-//     "translate-x-[300%]",
-//     "translate-x-[200%]",
-//     "translate-x-full",
-//     "translate-x-0",
-//   ],
-// ];
-
 export const SliderItem = ({ curPostion, imgSrc, index, children, mode }) => {
   //${translateX[index][curPostion]}
 

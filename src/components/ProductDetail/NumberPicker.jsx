@@ -1,19 +1,19 @@
-import { useState, Fragment } from "react";
+import { useContext, Fragment } from "react";
+import selectContext from "./selectContext";
 
-export const NumberPicker = ({ initialNum = 1 }) => {
-  const [num, setNum] = useState(initialNum);
+export const NumberPicker = () => {
+  const {
+    selectState: { amount },
+    selectDispatch,
+  } = useContext(selectContext);
 
   const handleClick = (e) => {
     switch (e.target.name) {
       case "minus":
-        setNum((n) => {
-          return n - 1;
-        });
+        selectDispatch({ type: "number", payload: amount - 1 });
         break;
       case "plus":
-        setNum((n) => {
-          return n + 1;
-        });
+        selectDispatch({ type: "number", payload: amount + 1 });
         break;
       default:
         break;
@@ -26,16 +26,16 @@ export const NumberPicker = ({ initialNum = 1 }) => {
         onClick={handleClick}
         name="minus"
         className="w-10 h-10 text-3xl font-bold bg-slate-300 rounded-full flex justify-center items-center"
-        disabled={num === 1}
+        disabled={amount === 1}
       >
         -
       </button>
-      <span className="font-bold text-2xl">{num}</span>
+      <span className="font-bold text-2xl">{amount}</span>
       <button
         onClick={handleClick}
         name="plus"
         className="w-10 h-10 text-3xl font-bold bg-slate-300 rounded-full flex justify-center items-center"
-        disabled={num === 10}
+        disabled={amount === 10}
       >
         +
       </button>

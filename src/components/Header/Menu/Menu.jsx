@@ -17,7 +17,12 @@ export const Menu = () => {
   return (
     <div className="flex mt-6  font-bold">
       <MenuList css="flex gap-12 items-center">
-        <MenuImage src={hipo} alt="BRAND" css={"h-auto w-12 rounded-full"} />
+        <MenuImage
+          src={hipo}
+          alt="BRAND"
+          css={"h-auto w-12 rounded-full"}
+          item="brand"
+        />
         <MenuItem name={WOMENNAME} istrigger>
           Women
           <span className="ms-2">

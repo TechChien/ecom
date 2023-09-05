@@ -45,31 +45,29 @@ export const Header = () => {
   };
 
   return (
-    <div className="container mx-auto">
-      <header className="min-w-full  text-slate-700 text-xl mt-2">
-        <nav className="flex gap-8">
-          <div className="ms-auto">
-            <NavLink to="/">Sign Up</NavLink>
-          </div>
-          <NavLink to="about">My Account</NavLink>
-          <NavLink to="help">Order Tracking</NavLink>
-          <DropDownList
-            name={CURNAME}
-            options={currencylist}
-            onChange={handleDropdownListChange}
-          >
-            {CUR}
-          </DropDownList>
-          <DropDownList
-            name={LANNAME}
-            options={languagelist}
-            onChange={handleDropdownListChange}
-          >
-            {LAN}
-          </DropDownList>
-        </nav>
-        <Menu />
-      </header>
-    </div>
+    <header className="min-w-full  text-slate-700 text-xl mt-2">
+      <nav className="flex gap-8">
+        <div className="ms-auto">
+          <NavLink to="/">Sign Up</NavLink>
+        </div>
+        <NavLink to="about">My Account</NavLink>
+        <NavLink to="help">Order Tracking</NavLink>
+        <DropDownList
+          name={CURNAME}
+          options={currencylist}
+          onChange={handleDropdownListChange}
+        >
+          {CUR}
+        </DropDownList>
+        <DropDownList
+          name={LANNAME}
+          options={languagelist}
+          onChange={handleDropdownListChange}
+        >
+          {LAN}
+        </DropDownList>
+      </nav>
+      <Menu />
+    </header>
   );
 };

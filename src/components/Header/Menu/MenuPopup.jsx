@@ -1,41 +1,36 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteCart } from "../../../redux/reducer/cartSlice";
 
-import home2 from "../../../assets/products/home2.jpg";
-import home3 from "../../../assets/products/home3.jpg";
-import home4 from "../../../assets/products/home4.jpg";
-import home5 from "../../../assets/products/home5.jpg";
-
-const buyItems = [
-  {
-    title: "Dimamble Ceiling Light Modern",
-    price: "279.99",
-    amount: 2,
-    imgSrc: home2,
-  },
-  {
-    title: "Modern Storage Cabinet with Deer & 3 Drawers",
-    price: "129.99",
-    amount: 1,
-    imgSrc: home3,
-  },
-  {
-    title: "Vonanfa Welvet Sofa Couch",
-    price: "352.99",
-    amount: 1,
-    imgSrc: home4,
-  },
-  {
-    title: "Awesome Bed for a Couple",
-    price: "579.99",
-    amount: 1,
-    imgSrc: home5,
-  },
-];
+import { ImageWindow } from "../../Trending/ImageWindow";
 
 export const MenuPopup = ({ top, hideFn, parentImg = "cart" }) => {
+  const items = useSelector((state) => state[parentImg]?.items);
+  const products = useSelector((state) => state.product.data);
+
+  const dispath = useDispatch();
+
   if (parentImg !== "cart") return null;
+  if (!items) return null;
+
+  const buyItems = items.map((item) => {
+    const ret = item.subtitle ? { subtitle: item.subtitle } : {};
+
+    return {
+      amount: item.amount,
+      ...ret,
+      ...products[item.productId - 1],
+    };
+  });
+
+  console.log("buyItems", buyItems);
+
+  const handleClick = (productId) => (e) => {
+    dispath(deleteCart(productId));
+    e.stopPropagation();
+  };
 
   return (
     <div
@@ -47,19 +42,28 @@ export const MenuPopup = ({ top, hideFn, parentImg = "cart" }) => {
       </h1>
       <hr />
       <ul className="flex flex-col gap-4 mt-4">
-        {buyItems.map((b, index) => (
-          <li key={index} className="flex gap-2">
+        {buyItems.map((item) => (
+          <li key={item.title} className="flex gap-2">
             <div className="w-1/3">
-              <img className="w-full h-[12rem] object-fit" src={b.imgSrc} />
+              <div className="w-full h-[12rem]">
+                <ImageWindow heart={false} hover={false} bgImg={item.bgImg} />
+              </div>
             </div>
             <div className="w-2/3">
               <div className="text-black font-bold ">
-                <h2>{b.title}</h2>
-                <blockquote className="mt-2">${b.price}</blockquote>
-                <p className="mt-2">Amount: {b.amount}</p>
+                <h2>{item.title}</h2>
+                <blockquote className="mt-2">${item.price}</blockquote>
+                {Object.prototype.hasOwnProperty.call(item, "subtitle") ? (
+                  <p className="mt-2">{item.subtitle}</p>
+                ) : null}
+                <p className="mt-2">Amount: {item.amount}</p>
               </div>
             </div>
-            <FontAwesomeIcon className="cursor-pointer" icon={faX} />
+            <FontAwesomeIcon
+              onClick={handleClick(item.productId)}
+              className="cursor-pointer"
+              icon={faX}
+            />
           </li>
         ))}
       </ul>
@@ -67,7 +71,7 @@ export const MenuPopup = ({ top, hideFn, parentImg = "cart" }) => {
       <div className="mt-2">
         <h2 className="text-3xl text-slate-600 font-bold">Subtotal</h2>
         <h3 className="mt-2 text-2xl text-slate-500">
-          ${buyItems.reduce((acc, b) => acc + +b.price, 0)}
+          ${buyItems.reduce((acc, b) => acc + +b.price * +b.amount, 0)}
         </h3>
       </div>
       <hr className="mt-2" />

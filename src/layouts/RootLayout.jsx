@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -7,15 +9,17 @@ import ScrollToTop from "../components/ScrollTop";
 
 export default function RootLayout() {
   return (
-    <div>
+    <Fragment>
       <ScrollToTop />
-      <Header />
+      <div className="container mx-auto">
+        <Header />
+      </div>
       <SearchBar />
       <main className="container mx-auto">
         <Outlet />
       </main>
       <Footer />
       <GoTop />
-    </div>
+    </Fragment>
   );
 }

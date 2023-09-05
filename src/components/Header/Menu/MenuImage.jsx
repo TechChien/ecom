@@ -20,7 +20,7 @@ export const MenuImage = ({ src, alt, css, item }) => {
   return (
     <li ref={ref} className="relative">
       <img onClick={handleClick} className={css} src={src} alt={alt} />
-      <Badge />
+      <Badge parentImg={item} />
       {open ? (
         <MenuPopup top={height} parentImg={item} hideFn={closePop} />
       ) : null}

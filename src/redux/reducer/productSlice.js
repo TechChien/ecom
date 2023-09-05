@@ -45,7 +45,6 @@ const initialState = {
       sold: 2109,
       stock: 179,
       bgImg: "apparel4",
-      relatedProduct: [],
     },
     {
       productId: 5,
@@ -100,7 +99,7 @@ const initialState = {
       originalPrice: "560.99",
       sold: 2151,
       stock: 904,
-      bgImage: "home1",
+      bgImg: "home1",
     },
     {
       productId: 10,
@@ -111,7 +110,7 @@ const initialState = {
       originalPrice: "120.99",
       sold: 1845,
       stock: 370,
-      bgImage: "electronic3",
+      bgImg: "electronic3",
     },
     {
       productId: 11,
@@ -122,7 +121,7 @@ const initialState = {
       originalPrice: "499.99",
       sold: 995,
       stock: 269,
-      bgImage: "home2",
+      bgImg: "home2",
     },
     {
       productId: 12,
@@ -133,7 +132,7 @@ const initialState = {
       originalPrice: "159.99",
       sold: 756,
       stock: 148,
-      bgImage: "home3",
+      bgImg: "home3",
     },
     {
       productId: 13,

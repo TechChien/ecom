@@ -1,12 +1,6 @@
 import { UpperBanner } from "./UpperBanner";
 import { LowerBanner } from "./LowerBanner";
 
-// import banner1 from "../../assets/banner/banner1.jpg";
-// import banner2 from "../../assets/banner/banner2.jpg";
-// import procat1 from "../../assets/banner/procat1.jpg";
-// import procat2 from "../../assets/banner/procat2.jpg";
-// import procat3 from "../../assets/banner/procat3.jpg";
-
 const upperBannerItems = [
   {
     category: "Brutal Sale",

@@ -1,39 +1,21 @@
-import home2 from "../assets/products/home2.jpg";
-import home3 from "../assets/products/home3.jpg";
-import home4 from "../assets/products/home4.jpg";
-import home5 from "../assets/products/home5.jpg";
-
-const buyItems = [
-  {
-    title: "Dimamble Ceiling Light Modern",
-    price: "279.99",
-    amount: 2,
-    imgSrc: home2,
-  },
-  {
-    title: "Modern Storage Cabinet with Deer & 3 Drawers",
-    price: "129.99",
-    amount: 1,
-    imgSrc: home3,
-  },
-  {
-    title: "Vonanfa Welvet Sofa Couch",
-    price: "352.99",
-    amount: 1,
-    imgSrc: home4,
-  },
-  {
-    title: "Awesome Bed for a Couple",
-    price: "579.99",
-    amount: 1,
-    imgSrc: home5,
-  },
-];
+import { useSelector } from "react-redux";
+import { ImageWindow } from "./Trending/ImageWindow";
 
 export const CheckoutPage = () => {
-  const subTotal = buyItems.reduce((acc, b) => acc + +b.price, 0);
+  const items = useSelector((state) => state["cart"]?.items);
+  const products = useSelector((state) => state.product.data);
 
-  const discount = -100;
+  const buyItems = items.map((item) => {
+    const ret = item.subtitle ? { subtitle: item.subtitle } : {};
+
+    return {
+      amount: item.amount,
+      ...ret,
+      ...products[item.productId - 1],
+    };
+  });
+  const subTotal = buyItems.reduce((acc, b) => acc + +b.price, 0);
+  const discount = subTotal ? -100 : 0;
 
   return (
     <div className="flex gap-4 mt-4">
@@ -62,7 +44,7 @@ export const CheckoutPage = () => {
           />
           <label className="font-bold text-2xl" htmlFor="lastname">
             <span className="relative before:absolute before:content-['*'] before:text-red-600 before:-right-5 before:top-0">
-              Last NAME
+              Last Name
             </span>
           </label>
           <input
@@ -126,7 +108,9 @@ export const CheckoutPage = () => {
         <div className="flex mt-2 flex-col gap-3">
           {buyItems.map((b, index) => (
             <div key={index} className="flex items-center gap-3">
-              <img className="w-1/5 h-[10rem] object-fit" src={b.imgSrc} />
+              <div className="w-1/5 h-[10rem]">
+                <ImageWindow heart={false} hover={false} bgImg={b.bgImg} />
+              </div>
               <div>
                 <blockquote className="text-xl font-bold">{b.title}</blockquote>
                 <blockquote className="text-xl font-bold">
