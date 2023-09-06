@@ -86,7 +86,7 @@ const CardItems = [
 
 export const TrendingRight = () => {
   return (
-    <div className="w-2/3 grid grid-rows-4 grid-flow-col gap-2">
+    <div className="md:w-2/3 flex flex-col md:grid md:grid-rows-4 md:grid-flow-col gap-2">
       <ProductCard {...CardItems[0]} />
       <ProductCard {...CardItems[1]} />
       <ProductCard {...CardItems[2]} />

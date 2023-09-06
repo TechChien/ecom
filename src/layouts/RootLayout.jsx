@@ -7,6 +7,8 @@ import { GoTop } from "../components/GoTop";
 import { SearchBar } from "../components/SearchBar/SearchBar";
 import ScrollToTop from "../components/ScrollTop";
 
+import { BottomFixedMenu } from "../components/Header/Menu/BottomFixedMenu";
+
 export default function RootLayout() {
   return (
     <Fragment>
@@ -20,6 +22,7 @@ export default function RootLayout() {
       </main>
       <Footer />
       <GoTop />
+      <BottomFixedMenu />
     </Fragment>
   );
 }

@@ -20,7 +20,7 @@ export const Stars = ({ score, comments }) => {
   const { empty, full, half } = calcStar(score);
 
   return (
-    <div className="flex mt-4">
+    <div className="flex mt-4  text-sm lg:text-md">
       {Array.from(Array(full)).map((_, index) => (
         <span key={10 + index} className="text-yellow-400">
           <FontAwesomeIcon icon={faStar} />

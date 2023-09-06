@@ -15,10 +15,10 @@ export const GoTop = () => {
   return (
     <div
       onClick={handleClick}
-      className="fixed bottom-5 right-5 flex flex-col gap-1 bg-slate-200 p-2 rounded-md"
+      className="fixed bottom-16 md:bottom-6 right-5 flex flex-col gap-1 bg-slate-200 p-2 rounded-md"
     >
       <FontAwesomeIcon className="text-slate-500" icon={faArrowUp} />
-      <h2 className="text-slate-600">Go top</h2>
+      <h2 className="text-slate-600 text-sm lg:text-md">Go top</h2>
     </div>
   );
 };

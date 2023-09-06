@@ -40,7 +40,7 @@ export const Slider = () => {
   const onDotsClick = (index) => (e) => setCurPostion(index);
 
   return (
-    <div className="min-w-full md:min-w-[75%] md:h-[650px] relative flex justify-center items-end overflow-hidden">
+    <div className="min-w-full h-[15rem] sm:h-[25rem] md:min-w-[75%] md:h-[650px] relative mt-4 md:mt-0 md:flex justify-center items-end overflow-hidden">
       {images.map((image, index) => {
         return (
           <SliderItem

@@ -49,12 +49,12 @@ export const ProductOnSale = () => {
   return (
     <div>
       <Breadcrumbs />
-      <div className="flex w-full gap-4">
+      <div className="flex flex-col  md:flex-row w-full gap-4">
         <ProductSlider images={images} />
         <ProductSelection {...product}>
           <ProductStock stock={107} sold={3459} />
           <CountDown />
-          <h3 className="text-2xl font-bold mt-4">Size</h3>
+          <h3 className=" md:text-xl lg:text-2xl font-bold mt-4">Size</h3>
           <ChoseOne render={renderSizeFn} type="size" />
         </ProductSelection>
       </div>

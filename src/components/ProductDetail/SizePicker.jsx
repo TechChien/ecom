@@ -5,7 +5,7 @@ export const SizePicker = ({ size, chosen = false }) => {
   return (
     <button
       name={size}
-      className={`rounded-full text-xl font-bold w-8 h-8 flex justify-center items-center ${
+      className={`rounded-full md:text-xl font-bold w-8 h-8 flex justify-center items-center ${
         chosen ? bgColorChosen : bgColorNormal
       }`}
     >

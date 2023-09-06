@@ -12,7 +12,7 @@ const infoItems = [
     ],
   },
   {
-    title: "Product Categories",
+    title: "All Categories",
     list: [
       "Beauty",
       "Electronic",
@@ -50,15 +50,17 @@ const infoItems = [
 
 export const Information = () => {
   return (
-    <div className="bg-slate-200 text-slate-500 pt-16 pb-8">
+    <div className="bg-slate-200 text-slate-500 pt-4 md:pt-16 pb-8">
       <div className="container mx-auto flex flex-col">
-        <div className="w-full flex">
+        <div className="w-full flex flex-col gap-6 md:gap-3 md:flex-row">
           {infoItems.map((info) => (
             <div className="w-1/4" key={info.title}>
-              <h1 className="text-md font-bold text-black">{info.title}</h1>
+              <h1 className="text-xl whitespace-nowrap font-bold text-black">
+                {info.title}
+              </h1>
               <ul className="flex flex-col text-sm gap-3 mt-3">
                 {info.list.map((item) => (
-                  <li className="hover:text-white" key={item}>
+                  <li className="hover:text-white whitespace-nowrap" key={item}>
                     {item}
                   </li>
                 ))}

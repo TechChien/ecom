@@ -27,7 +27,7 @@ export const ImageWindow = ({
           src={realImg}
           className={`w-full h-full ${
             load ? "opacity-100" : "opacity-0"
-          } transition-opacity duration-300 ease-in-out ${
+          } transition-opacity duration-300 object-fit ease-in-out ${
             hover ? "hover:scale-110" : ""
           }`}
           loading="lazy"

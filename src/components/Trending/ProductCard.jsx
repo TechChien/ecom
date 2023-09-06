@@ -13,7 +13,7 @@ export const ProductCard = ({ ...props }) => {
 
   return (
     <div className="flex gap-2">
-      <div className="w-1/3 relative overflow-hidden">
+      <div className="sm:w-2/5 md:w-1/3 md:h-full sm:h-[15rem]  relative overflow-hidden">
         <ImageWindow bgImg={bgImage} />
       </div>
       <div className="w-2/3">

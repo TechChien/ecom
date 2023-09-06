@@ -7,7 +7,7 @@ export const LowerBanner = ({ ...props }) => {
   const { srcImg, title, list } = props;
 
   return (
-    <div className="col-span-2 border rounded-md border-slate-300">
+    <div className="col-span-3 md:col-span-2 border rounded-md border-slate-300">
       <div className="w-full h-[20rem] flex justify-center">
         <div className="w-1/2 h-full">
           <ImageWindow

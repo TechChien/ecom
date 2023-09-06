@@ -45,7 +45,7 @@ export const ProductSlider = ({ images }) => {
   };
 
   return (
-    <div className="w-3/6 min-h-[20rem]">
+    <div className="w-full md:w-1/2 min-h-[20rem]">
       <div className=" relative overflow-hidden h-[50rem] ">
         {images.map((image, index) => {
           return (
@@ -60,14 +60,14 @@ export const ProductSlider = ({ images }) => {
         {curPostion !== 0 ? (
           <FontAwesomeIcon
             onClick={handleLeftClick}
-            className="absolute text-white text-3xl translate-y-[25rem] left-2 hover:-translate-x-1 hover:scale-125 cursor-pointer hover:opacity-100 opacity-40 "
+            className="absolute text-white text-xl lg:text-3xl translate-y-[25rem] left-2 hover:-translate-x-1 hover:scale-125 cursor-pointer hover:opacity-100 opacity-40 "
             icon={faCircleLeft}
           />
         ) : null}
         {curPostion !== 3 ? (
           <FontAwesomeIcon
             onClick={handleRightClick}
-            className="absolute text-white text-3xl translate-y-[25rem] right-2 hover:translate-x-1 hover:scale-125 hover:opacity-100 opacity-40  cursor-pointer "
+            className="absolute text-white text-xl lg:text-3xl translate-y-[25rem] right-2 hover:translate-x-1 hover:scale-125 hover:opacity-100 opacity-40  cursor-pointer "
             icon={faCircleRight}
           />
         ) : null}

@@ -83,7 +83,7 @@ export const Featuring = () => {
           </span>
         </div>
       </div>
-      <div className="grid grid-rows-2 grid-cols-4 grid-flow-col gap-3 mt-4">
+      <div className="grid grid-rows-4 md:grid-rows-2 grid-cols-2 md:grid-cols-4  grid-flow-row md:grid-flow-col gap-3 mt-4">
         <FeaturingItem {...featureItems[0]} />
         <FeaturingItem {...featureItems[1]} />
         <FeaturingItem {...featureItems[2]} />

@@ -42,7 +42,7 @@ const lowerBannerItems = [
 
 export const Banner = () => {
   return (
-    <div className="grid grid-rows-2 grid-cols-6  gap-3">
+    <div className="grid  md:grid-rows-2 md:grid-cols-6 gap-3">
       <UpperBanner {...upperBannerItems[0]} />
       <UpperBanner {...upperBannerItems[1]} />
       <LowerBanner {...lowerBannerItems[0]} />

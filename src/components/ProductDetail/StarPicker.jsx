@@ -84,7 +84,7 @@ const Star = forwardRef((props, ref) => {
   return (
     <div ref={ref}>
       <FontAwesomeIcon
-        className="text-3xl text-yellow-400"
+        className="text-2xl md:text-3xl text-yellow-400"
         ref={ref}
         icon={icon}
       />

@@ -69,8 +69,6 @@ export const ProductSelection = ({ children, ...props }) => {
     information: { brands, activity, material, gender },
   } = props;
 
-  console.log(selectState);
-
   const handleAddToCart = (e) => {
     const { color, size, amount } = selectState;
     let subtitle = "";
@@ -87,8 +85,8 @@ export const ProductSelection = ({ children, ...props }) => {
   };
 
   return (
-    <div className="w-1/2">
-      <h1 className="text-4xl font-extrabold">{title}</h1>
+    <div className="w-full md:w-1/2">
+      <h1 className="text-xl  lg:text-4xl font-extrabold">{title}</h1>
       <Stars {...{ score, comments }} />
       <span className="bg-slate-300 text-green-500 p-2 font-bold inline-block mt-4 rounded-md">
         In Stock
@@ -98,12 +96,12 @@ export const ProductSelection = ({ children, ...props }) => {
         {children}
 
         <div className="flex gap-4 items-center mt-6">
-          <div className="p-4 border-slate-300 flex justify-center items-center gap-6 border rounded-xl w-1/3">
+          <div className="p-2 md:p-4 border-slate-300 flex justify-center items-center gap-3 md:gap-2 lg:gap-4 border rounded-xl w-2/5 sm:w-1/5 md:w-2/5  ">
             <NumberPicker />
           </div>
           <button
             onClick={handleAddToCart}
-            className="w-full py-4 bg-red-500 rounded-full text-2xl text-white hover:bg-red-400 "
+            className="w-full p-4 md:py-4 bg-red-500 rounded-full md:text-2xl text-white hover:bg-red-400 "
           >
             Add to Cart
           </button>
@@ -111,24 +109,27 @@ export const ProductSelection = ({ children, ...props }) => {
       </selctContext.Provider>
       <div className="flex gap-6 mt-12">
         <div className="flex gap-2 cursor-pointer">
-          <FontAwesomeIcon className="text-3xl " icon={faHeart} />
-          <span className="text-2xl font-extrabold">WISHLIST</span>
+          <FontAwesomeIcon className="md:text-3xl  text-xl" icon={faHeart} />
+          <span className="text-xl md:text-2xl font-extrabold">WISHLIST</span>
         </div>
         <div className="flex gap-2  cursor-pointer">
-          <FontAwesomeIcon className="text-3xl " icon={faShareNodes} />
-          <span className="text-2xl font-extrabold">SHARE</span>
+          <FontAwesomeIcon
+            className="md:text-3xl  text-xl"
+            icon={faShareNodes}
+          />
+          <span className="text-xl md:text-2xl font-extrabold">SHARE</span>
         </div>
       </div>
       <div className="flex flex-col gap-6 mt-12">
         <Accordion title="INFORMATION">
           <div className="flex mt-4 gap-4 ps-6">
-            <ul className="text-xl flex flex-col gap-2">
+            <ul className="md:text-xl flex flex-col gap-2">
               <li>BRANDS</li>
               <li>ACTIVITY</li>
               <li>MATERIAL</li>
               <li>GENDER</li>
             </ul>
-            <ul className="text-xl  flex flex-col gap-2">
+            <ul className="md:text-xl  flex flex-col gap-2">
               <li>{brands}</li>
               <li>{activity}</li>
               <li>{material}</li>
@@ -152,12 +153,12 @@ export const ProductSelection = ({ children, ...props }) => {
         <Accordion title="REVIEWS">
           <div className="mt-4 ps-6 w-full">
             <div className="flex items-center">
-              <span className="pe-0 text-6xl font-extrabold ">
+              <span className="pe-0 text-3xl md:text-6xl font-extrabold ">
                 4.9 <span className="font-thin text-slate-200">/</span>
               </span>
               <span className="px-2">2,251 reviews</span>
             </div>
-            <button className="w-full p-4 rounded-full text-white text-2xl bg-blue-800 hover:bg-blue-700 my-6">
+            <button className="w-full p-2 md:p-4 rounded-full text-white text-lg md:text-2xl bg-blue-800 hover:bg-blue-700 my-6">
               Write review
             </button>
 

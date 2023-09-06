@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-export const Hamburger = ({ onClick, open = false }) => {
+export const Hamburger = ({ onClick = null, open = false }) => {
   const translate =
     "-rotate-45 rotate-45 -translate-y-[11px] translate-y-[11px] opacity-0";
 

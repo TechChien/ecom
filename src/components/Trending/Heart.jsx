@@ -16,11 +16,11 @@ export const Heart = () => {
   return (
     <div className="absolute top-1.5 right-3" onClick={handleLike}>
       <span
-        className={`text-4xl ${
+        className={`md:text-xl lg:text-4xl ${
           like ? likeColor : normalColor
-        } hover:text-red-500 relative after:content-['']  after:w-12 after:h-12 after:bg-transparent after:border-4 after:${
+        } hover:text-red-500 relative after:content-['']  after:lg:w-12 after:lg:h-12 after:md:w-6 after:md:h-6 after:bg-transparent after:lg:border-4 after:md:border-2  after:${
           like ? borderlikeColor : bordernormalColor
-        } after:rounded-full after:absolute after:inline-block after:align-middle after:hover:border-red-500  after:-top-0.5 after:-left-[0.75rem]`}
+        } after:rounded-full after:absolute after:inline-block after:align-middle after:hover:border-red-500  after:lg:-top-0.5 after:lg:-left-[0.75rem] after:md:top-0 after:md:-left-[0.30rem]`}
       >
         &hearts;
       </span>

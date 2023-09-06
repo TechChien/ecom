@@ -36,7 +36,7 @@ export const AllMenu = () => {
     <div className=" bg-red-500  py-4 w-1/4 relative" ref={ref}>
       <div className="flex">
         <div className="text-white">
-          <h2 className="px-2 text-xl font-bold ">All Departments</h2>
+          <h2 className="px-2 lg:text-xl font-bold ">All Departments</h2>
           <p className="px-2">Total 1059 Products</p>
         </div>
 

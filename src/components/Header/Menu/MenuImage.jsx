@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { MenuPopup } from "./MenuPopup";
 import { Badge } from "./Badge";
+import { MenuSummary } from "./MenuSummary";
 
 export const MenuImage = ({ src, alt, css, item }) => {
   const [height, setHeight] = useState(0);
@@ -18,12 +19,17 @@ export const MenuImage = ({ src, alt, css, item }) => {
   const closePop = (e) => setOpen(false);
 
   return (
-    <li ref={ref} className="relative">
-      <img onClick={handleClick} className={css} src={src} alt={alt} />
-      <Badge parentImg={item} />
-      {open ? (
-        <MenuPopup top={height} parentImg={item} hideFn={closePop} />
-      ) : null}
+    <li ref={ref}>
+      <div className="flex gap-4 md:gap-8 relative" onClick={handleClick}>
+        <div className="relative">
+          <img className={css} src={src} alt={alt} />
+          <Badge parentImg={item} />
+        </div>
+        {item === "cart" ? <MenuSummary /> : null}
+        {open ? (
+          <MenuPopup top={height} parentImg={item} hideFn={closePop} />
+        ) : null}
+      </div>
     </li>
   );
 };

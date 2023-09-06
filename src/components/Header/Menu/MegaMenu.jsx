@@ -80,15 +80,7 @@ export const MegaMenu = ({ show, hideFn }) => {
             </div>
           </div>
           <div>
-            {/* <div className="h-full w-[20rem] aspect-[2/3] relative md:hidden lg:block bg-center bg-no-repeat bg-cover  bg-apparel4 text-center">
-              <div className="font-bold text-violet-900 text-4xl translate-y-[18rem]">
-                MOST WANTED
-              </div>
-              <div className="inline-block text-md font-bold w-3/5 px-4 py-4 bg-orange-500 translate-y-[20rem] rounded-full hover:bg-orange-300 text-white">
-                Order Now
-              </div>
-            </div> */}
-            <div className="h-full w-[25rem]">
+            <div className="h-full w-[25rem] hidden lg:block">
               <div className="w-10/12 mx-auto relative mt-6 md:mt-8 overflow-hidden">
                 <ImageWindow bgImg="apparel4" heart={false} hover={false}>
                   <div className="font-bold text-violet-900 text-4xl translate-y-[15rem] translate-x-[10%] absolute inset-0">

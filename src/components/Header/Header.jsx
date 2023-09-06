@@ -45,8 +45,8 @@ export const Header = () => {
   };
 
   return (
-    <header className="min-w-full  text-slate-700 text-xl mt-2">
-      <nav className="flex gap-8">
+    <header className="min-w-full  text-slate-700 text-xl mt-2 ">
+      <nav className="md:flex gap-8  hidden">
         <div className="ms-auto">
           <NavLink to="/">Sign Up</NavLink>
         </div>

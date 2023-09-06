@@ -52,7 +52,7 @@ export const RelatedProduct = () => {
         </div>
       </div>
       <hr />
-      <div className="grid grid-cols-4 grid-flow-col gap-3 mt-4">
+      <div className="grid grid-cols-2  sm:grid-cols-4  gap-3 mt-4">
         <FeaturingItem {...relatedItems[0]} />
         <FeaturingItem {...relatedItems[1]} />
         <FeaturingItem {...relatedItems[2]} />

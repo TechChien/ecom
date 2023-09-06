@@ -25,16 +25,16 @@ export const NumberPicker = () => {
       <button
         onClick={handleClick}
         name="minus"
-        className="w-10 h-10 text-3xl font-bold bg-slate-300 rounded-full flex justify-center items-center"
+        className="w-5 h-5 md:w-8 md:h-8 md:text-3xl font-bold bg-slate-300 rounded-full flex justify-center items-center"
         disabled={amount === 1}
       >
         -
       </button>
-      <span className="font-bold text-2xl">{amount}</span>
+      <span className="font-bold text-lg md:text-2xl">{amount}</span>
       <button
         onClick={handleClick}
         name="plus"
-        className="w-10 h-10 text-3xl font-bold bg-slate-300 rounded-full flex justify-center items-center"
+        className="w-5 h-5 md:w-8 md:h-8 md:text-3xl font-bold bg-slate-300 rounded-full flex justify-center items-center"
         disabled={amount === 10}
       >
         +

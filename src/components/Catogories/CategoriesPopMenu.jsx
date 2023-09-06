@@ -109,7 +109,7 @@ export const CategoriesPopMenu = ({ hoverEl, open, xp, parentH, hideFn }) => {
 
     const { subcategory, bg } = context[hoverEl];
     // left-[${xp}px] left-[384px]  bg-${bg}
-    let width = 15;
+    let width = 12;
     if (subcategory.length > 6) {
       width *= 4;
     } else if (subcategory.length > 4) {

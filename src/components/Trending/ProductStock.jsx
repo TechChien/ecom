@@ -7,7 +7,7 @@ export const ProductStock = ({ stock = 1, sold = 1 }) => {
 
   return (
     <>
-      <div className="flex w-full mt-4">
+      <div className="flex w-full lg:mt-4">
         {stock ? <span className="text-slate-300">Sold {so}</span> : null}
         <span className="text-slate-300 ms-auto">Stock {s}</span>
       </div>
