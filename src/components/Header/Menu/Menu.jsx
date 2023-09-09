@@ -1,37 +1,48 @@
-import hipo from "../../../assets/hipo.png";
-import cart from "../../../assets/cart.png";
-import heart from "../../../assets/heart.png";
+import { Fragment, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
+import hipo from "../../../assets/hipo.png";
+import cart from "../../../assets/cart.png";
+import wishlist from "../../../assets/heart.png";
+
 import { MenuItem } from "./MenuItem";
 import { MenuImage } from "./MenuImage";
-import { MenuSummary } from "./MenuSummary";
 import { MenuList } from "./MenuList";
 
 import { Hamburger } from "../../SearchBar/Hamburger";
 
-import { Fragment } from "react";
+import { SlideHeader } from "../SlideHeader";
 
-const MENNAME = "MEN";
-const WOMENNAME = "WOMEN";
-const SPORTSNAME = "SPORT";
+import { MENNAME, WOMENNAME, SPORTSNAME, BRAND, CART, WISHLIST } from "./items";
+import { Link } from "react-router-dom";
 
 export const Menu = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = (e) => {
+    setOpen(true);
+  };
+
+  const hideFn = (e) => {
+    setOpen(false);
+  };
+
   return (
     <Fragment>
       <div className="flex mt-6  font-bold">
         <MenuList css="flex gap-12 items-center">
-          <div className="block md:hidden -me-12">
+          <div onClick={handleClick} className="block md:hidden -me-12">
             <Hamburger />
           </div>
-
-          <MenuImage
-            src={hipo}
-            alt="BRAND"
-            css={"h-auto w-12 rounded-full"}
-            item="brand"
-          />
+          <Link to="/">
+            <MenuImage
+              src={hipo}
+              alt="BRAND"
+              css={"h-auto w-12 rounded-full"}
+              item={BRAND}
+            />
+          </Link>
           <div className="md:flex hidden gap-12">
             <MenuItem name={WOMENNAME} istrigger>
               Women
@@ -46,16 +57,17 @@ export const Menu = () => {
         <MenuList css="flex ms-auto md:gap-9 gap-4">
           <span className="hidden md:block">
             <MenuImage
-              src={heart}
-              alt="HEART"
+              src={wishlist}
+              alt="wishlist"
               css={"h-auto w-10"}
-              item="heart"
+              item={WISHLIST}
             />
           </span>
-          <MenuImage src={cart} alt="CART" css={"h-auto w-10"} item="cart" />
+          <MenuImage src={cart} alt="CART" css={"h-auto w-10"} item={CART} />
         </MenuList>
       </div>
       <hr className="mt-2 block md:hidden bg-gray-200 border-1 dark:bg-gray-700" />
+      <SlideHeader open={open} hideFn={hideFn} />
     </Fragment>
   );
 };

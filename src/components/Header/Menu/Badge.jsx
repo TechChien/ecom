@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
+import { CART } from "./items";
 
-export const Badge = ({ parentImg = "cart" }) => {
+export const Badge = ({ parentImg = CART }) => {
   const items = useSelector((state) => state[parentImg]?.items);
 
   if (!items) return null;

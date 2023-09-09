@@ -1,6 +1,7 @@
 import { PopupContent } from "./PopupContent";
+import { CART } from "./items";
 
-export const MenuPopup = ({ top, hideFn, parentImg = "cart" }) => {
+export const MenuPopup = ({ top, hideFn, parentImg = CART }) => {
   return (
     <div
       style={{ top: top, zIndex: 10, right: 0 }}

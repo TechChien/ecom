@@ -120,6 +120,7 @@ export const ProductSelection = ({ children, ...props }) => {
           <span className="text-xl md:text-2xl font-extrabold">SHARE</span>
         </div>
       </div>
+      <hr />
       <div className="flex flex-col gap-6 mt-12">
         <Accordion title="INFORMATION">
           <div className="flex mt-4 gap-4 ps-6">
@@ -137,6 +138,7 @@ export const ProductSelection = ({ children, ...props }) => {
             </ul>
           </div>
         </Accordion>
+        <hr />
         <Accordion title="DETAILS">
           <div className="mt-4 ps-6">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum,
@@ -145,11 +147,13 @@ export const ProductSelection = ({ children, ...props }) => {
             assumenda hic doloremque dignissimos, asperiores deserunt.
           </div>
         </Accordion>
+        <hr />
         <Accordion title="CUSTOMS">
           <div className=" mt-4  ps-2">
             <TableDisplay header={headerItem} data={dataItems} />
           </div>
         </Accordion>
+        <hr />
         <Accordion title="REVIEWS">
           <div className="mt-4 ps-6 w-full">
             <div className="flex items-center">

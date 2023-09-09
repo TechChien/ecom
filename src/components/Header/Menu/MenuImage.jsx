@@ -3,6 +3,8 @@ import { MenuPopup } from "./MenuPopup";
 import { Badge } from "./Badge";
 import { MenuSummary } from "./MenuSummary";
 
+import { CART, WISHLIST } from "./items";
+
 export const MenuImage = ({ src, alt, css, item }) => {
   const [height, setHeight] = useState(0);
   const [open, setOpen] = useState(false);
@@ -16,7 +18,12 @@ export const MenuImage = ({ src, alt, css, item }) => {
 
   const handleClick = (e) => setOpen((o) => !o);
 
-  const closePop = (e) => setOpen(false);
+  const closePop = (e) => {
+    e.stopPropagation();
+    setOpen(false);
+  };
+
+  const render = item === CART;
 
   return (
     <li ref={ref}>
@@ -25,9 +32,11 @@ export const MenuImage = ({ src, alt, css, item }) => {
           <img className={css} src={src} alt={alt} />
           <Badge parentImg={item} />
         </div>
-        {item === "cart" ? <MenuSummary /> : null}
-        {open ? (
-          <MenuPopup top={height} parentImg={item} hideFn={closePop} />
+        {item === CART ? <MenuSummary /> : null}
+        {render ? (
+          open ? (
+            <MenuPopup top={height} parentImg={item} hideFn={closePop} />
+          ) : null
         ) : null}
       </div>
     </li>

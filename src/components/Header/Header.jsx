@@ -48,9 +48,8 @@ export const Header = () => {
     <header className="min-w-full  text-slate-700 text-xl mt-2 ">
       <nav className="md:flex gap-8  hidden">
         <div className="ms-auto">
-          <NavLink to="/">Sign Up</NavLink>
+          <NavLink to="about">My Account</NavLink>
         </div>
-        <NavLink to="about">My Account</NavLink>
         <NavLink to="help">Order Tracking</NavLink>
         <DropDownList
           name={CURNAME}
