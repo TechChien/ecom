@@ -1,7 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-
 export const ColorPicker = ({ color, chosen = false }) => {
   // const [pick, setPick] = useState(false);
 
@@ -24,11 +20,11 @@ export const ColorPicker = ({ color, chosen = false }) => {
   return (
     <button
       name={color}
-      className={`w-8 h-8 bg-${color}-500 text-2xl rounded-full ${
-        chosen ? "scale-110" : ""
+      className={`w-6 h-6 relative bg-${color}-500 text-md rounded-full ${
+        chosen
+          ? `scale-110 after:content-[''] after:absolute after:w-5  after:h-5 after:top-0.5 after:left-0.5 after:bg-${color}-500  after:rounded-full after:border-2 after:border-white`
+          : ""
       } `}
-    >
-      {chosen ? "✔" : null}
-    </button>
+    ></button>
   );
 };

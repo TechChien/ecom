@@ -8,9 +8,6 @@ const SPA = "SPA";
 const JAP = "JAP";
 const TW = "TW";
 
-const CURNAME = "CUR";
-const LANNAME = "LAN";
-
 const languagelist = [
   { title: "ENG", value: ENG },
   { title: "SPA", value: SPA },
@@ -26,45 +23,36 @@ const currencylist = [
 ];
 
 export const Header = () => {
-  const [CUR, setCUR] = useState(currencylist[0].value);
-  const [LAN, setLAN] = useState(languagelist[0].value);
+  const [CUR, setCUR] = useState(currencylist[0]);
+  const [LAN, setLAN] = useState(languagelist[0]);
 
-  const handleDropdownListChange = (e) => {
-    console.log(e.target.name);
-    switch (e.target.name) {
-      case CURNAME:
-        setCUR(e.target.value);
-        break;
-      case LANNAME:
-        setLAN(e.target.value);
-        break;
-      default:
-        console.log("Could not recognize the name of the drop down list");
-        break;
-    }
+  const getCurrencyListValue = (value) => {
+    setCUR(value);
+  };
+
+  const getLanguageListValue = (value) => {
+    setLAN(value);
   };
 
   return (
-    <header className="min-w-full  text-slate-700 text-xl mt-2 ">
-      <nav className="md:flex gap-8  hidden">
-        <div className="ms-auto">
+    <header className="min-w-full  text-slate-700 mt-2 ">
+      <nav className="md:flex gap-2  hidden">
+        <div className="ms-auto px-2 font-bold ">
           <NavLink to="about">My Account</NavLink>
         </div>
-        <NavLink to="help">Order Tracking</NavLink>
+        <NavLink className="px-2 font-bold " to="help">
+          Order Tracking
+        </NavLink>
         <DropDownList
-          name={CURNAME}
           options={currencylist}
-          onChange={handleDropdownListChange}
-        >
-          {CUR}
-        </DropDownList>
+          onChange={getCurrencyListValue}
+          firstChose={CUR}
+        />
         <DropDownList
-          name={LANNAME}
           options={languagelist}
-          onChange={handleDropdownListChange}
-        >
-          {LAN}
-        </DropDownList>
+          onChange={getLanguageListValue}
+          firstChose={LAN}
+        />
       </nav>
       <Menu />
     </header>

@@ -44,8 +44,8 @@ export const AllMenu = () => {
       </div>
       {render && open ? (
         <div
-          style={{ left: 0, top: height, width, zIndex: 10 }}
-          className="bg-slate-300 absolute"
+          style={{ left: 0, top: height, width }}
+          className="bg-slate-300 absolute  z-20"
         >
           <CategoriesMenu />
         </div>

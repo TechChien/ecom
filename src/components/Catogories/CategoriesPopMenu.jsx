@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo } from "react";
+import { Fragment } from "react";
 
 const context = {
   ["Beauty"]: {

@@ -9,7 +9,7 @@ export const MegaMenu = ({ show, hideFn }) => {
     content = (
       <div
         onMouseLeave={hideFn}
-        className="py-8 bg-slate-200 absolute top-[7rem] w-screen"
+        className="py-8 z-20 bg-slate-200 absolute top-[7rem] w-screen"
       >
         <div className="container mx-auto flex gap-20 sm:text-sm  md:text-md xl:text-xl">
           <div className="">
