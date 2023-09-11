@@ -231,10 +231,7 @@ const ImageToDisplay = forwardRef((props, ref) => {
       id={id}
       className="touch-none inline-block w-full h-full  align-top  transition-all duration-500"
     >
-      <img
-        className="h-full max-w-full object-contain md:object-fill"
-        src={image}
-      />
+      <img className="h-full max-w-full  md:object-fill" src={image} />
     </div>
   );
 });
