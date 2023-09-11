@@ -3,18 +3,26 @@
 
 // import { ImageWord } from "./Catogories/ImageWord";
 
-import { useState, useRef, createRef, forwardRef, useEffect } from "react";
-
-import slider0 from "../assets/slider/slider0.jpg";
-import slider1 from "../assets/slider/slider1.jpg";
-import slider2 from "../assets/slider/slider2.jpg";
-import slider3 from "../assets/slider/slider3.jpg";
-
-const images = [slider0, slider1, slider2, slider3];
+import { useState, useRef, forwardRef } from "react";
+import { SliderDots } from "./Catogories/SliderDots";
 
 const widthSpan = 100;
 
-export const TouchedSlider = () => {
+const calculateCentralImage = (curPos, imageTotalCount) => {
+  if (curPos === 0) {
+    return [0, 1, 2];
+  } else if (curPos === imageTotalCount - 1) {
+    return [imageTotalCount - 3, imageTotalCount - 2, imageTotalCount - 1];
+  }
+  return [curPos - 1, curPos, curPos + 1];
+};
+
+export const TouchedSlider = ({
+  render,
+  images,
+  dotDisplay = false,
+  displaySubImages = false,
+}) => {
   const [position, setPosition] = useState(0);
   const [touchStartPosition, setTouchStartPosition] = useState(0);
   const [touchEndPosition, setTouchEndPosition] = useState(0);
@@ -69,6 +77,9 @@ export const TouchedSlider = () => {
         handleNextClick();
       } else if (touchStartPosition - touchEndPosition < -75) {
         handlePrevClick();
+      } else {
+        console.log("here else condition touch");
+        jumpToPosition(position);
       }
     }
     setTouched(false);
@@ -101,13 +112,21 @@ export const TouchedSlider = () => {
         handleNextClick();
       } else if (mouseStartPosition - mouseEndPosition < -100) {
         handlePrevClick();
+      } else {
+        console.log("here else condition mouse");
+        jumpToPosition(position);
       }
     }
     setMouseClicked(false);
     setMouseSwiped(false);
   };
 
-  let renderDisplayFrame = (
+  const jumpToPosition = (index) => {
+    translateFullSlides(index);
+    setPosition(index);
+  };
+
+  let renderDisplayFrame = () => (
     <>
       {images.map((image, index) => {
         return (
@@ -139,15 +158,26 @@ export const TouchedSlider = () => {
     setPosition(newPosition);
   };
 
-  console.log(imageRef);
+  const handleDotClick = (index) => (e) => {
+    jumpToPosition(index);
+  };
+
+  const handlers = {
+    touchStartHandler,
+    touchMoveHandler,
+    touchEndHandler,
+    mouseStartHandler,
+    mouseMoveHandler,
+    mouseEndHandler,
+  };
 
   return (
     <>
       <div
         id="SlideContainer"
-        className="relative flex align-middle w-full items-center overflow-hidden "
+        className="relative align-middle w-full  overflow-hidden "
       >
-        <div
+        {/* <div
           onTouchStart={touchStartHandler}
           onTouchMove={touchMoveHandler}
           onTouchEnd={touchEndHandler}
@@ -160,22 +190,34 @@ export const TouchedSlider = () => {
           className="touch-none w-[60rem] h-[30rem] max-h-[40rem] whitespace-nowrap overflow-x-hidden  text-center z-10 mx-auto "
         >
           {renderDisplayFrame}
-        </div>
+        </div> */}
+        {render(handlers, position, ref, renderDisplayFrame())}
+        {dotDisplay ? (
+          <div className="absolute flex gap-3 bottom-10 left-[45%]">
+            {Array.from(Array(4)).map((_, index) => (
+              <SliderDots
+                onClick={handleDotClick(index)}
+                key={index}
+                active={position === index}
+                index={index}
+              />
+            ))}
+          </div>
+        ) : null}
+        {displaySubImages ? (
+          <div className="mt-4 flex gap-3 justify-center overflow-hidden">
+            {calculateCentralImage(position, images.length).map(
+              (imageIndex) => (
+                <img
+                  key={imageIndex}
+                  className="w-1/3 h-80 object-cover"
+                  src={images[imageIndex]}
+                />
+              )
+            )}
+          </div>
+        ) : null}
       </div>
-      <button
-        className="p-2 bg-red-500"
-        disabled={position === 0}
-        onClick={handlePrevClick}
-      >
-        PREV
-      </button>
-      <button
-        className="p-2 bg-green-500"
-        disabled={position === images.length - 1}
-        onClick={handleNextClick}
-      >
-        NEXT
-      </button>
     </>
   );
 };
@@ -189,7 +231,10 @@ const ImageToDisplay = forwardRef((props, ref) => {
       id={id}
       className="touch-none inline-block w-full h-full  align-top  transition-all duration-500"
     >
-      <img className="h-full max-w-full object-fit" src={image} />
+      <img
+        className="h-full max-w-full object-contain md:object-fill"
+        src={image}
+      />
     </div>
   );
 });
