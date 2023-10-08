@@ -12,30 +12,24 @@ import {
   faShield,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { useTranslation } from "react-i18next";
 import { CategoriesItem } from "./CategoriesItem";
 import { CategoriesPopMenu } from "./CategoriesPopMenu";
 
 // todo: fetch list of catogory from the backend
 // but now still static list
 export const listOfCatogory = [
-  { icon: faRocket, title: "Beauty" },
-  { icon: faDesktop, title: "Eletronic" },
-  { icon: faPersonDress, title: "Women's Fashion" },
-  { icon: faLeaf, title: "Men's Fashion" },
-  { icon: faHammer, title: "Girl Fashion" },
-  { icon: faCrown, title: "Boy's Fashion" },
-  { icon: faPlane, title: "Health & Household" },
-  { icon: faMagnet, title: "Home & Kitchen" },
-  { icon: faLemon, title: "Pet Supplies" },
-  { icon: faShield, title: "Sports" },
+  { icon: faRocket, title: "category.Beauty.title", hasSub: true },
+  { icon: faDesktop, title: "category.Electronic.title", hasSub: true },
+  { icon: faPersonDress, title: "category.WomenFashion.title", hasSub: true },
+  { icon: faLeaf, title: "category.MenFashion.title" },
+  { icon: faHammer, title: "category.GirlFashion.title" },
+  { icon: faCrown, title: "category.BoyFashion.title" },
+  { icon: faPlane, title: "category.HealthHousehold.title" },
+  { icon: faMagnet, title: "category.HomeKitchen.title", hasSub: true },
+  { icon: faLemon, title: "category.PetSupplies.title" },
+  { icon: faShield, title: "category.Sports.title" },
 ];
-
-export const renderContext = {
-  ["Home & Kitchen"]: {},
-  ["Beauty"]: {},
-  ["Eletronic"]: {},
-  ["Women's Fashion"]: {},
-};
 
 export const CategoriesMenu = (props) => {
   const [open, setOpen] = useState(false);
@@ -43,6 +37,7 @@ export const CategoriesMenu = (props) => {
   const [xp, setXp] = useState(0);
   const [parentH, setParentH] = useState(0);
   const parentRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (parentRef) {
@@ -71,12 +66,9 @@ export const CategoriesMenu = (props) => {
           <CategoriesItem
             key={item.icon.iconName}
             icon={item.icon}
-            title={item.title}
-            renderPopup={Object.prototype.hasOwnProperty.call(
-              renderContext,
-              item.title
-            )}
-            clickHandler={clickHandler(item.title)}
+            title={t(item.title)}
+            renderPopup={item.hasSub}
+            clickHandler={clickHandler(t(item.title, { lng: "en" }))}
           />
         ))}
       </ul>

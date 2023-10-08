@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Fragment } from "react";
+import { useState, Fragment } from "react";
 
 import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -13,29 +13,16 @@ import { BottomMenuSearchBar } from "../../SearchBar/BottomMenuSearchBar";
 import { CartSidePopup } from "./CartSidePopup";
 
 export const BottomFixedMenu = () => {
-  const [height, setHeight] = useState(0);
   const [openSearch, setOpenSearch] = useState(false);
   const [openCart, setOpenCart] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (ref) {
-      setHeight(ref.current.offsetHeight);
-    }
-  }, [ref]);
 
   const handleSearchClick = (e) => setOpenSearch((o) => !o);
-
   const handleCartClick = (e) => setOpenCart((o) => !o);
-
   const handleCloseCart = (e) => setOpenCart(false);
 
   return (
     <Fragment>
-      <div
-        ref={ref}
-        className="fixed bottom-0 md:hidden w-screen h-[3rem] bg-slate-300"
-      >
+      <div className="fixed bottom-0 md:hidden w-screen h-[3rem] bg-slate-300">
         <div className="w-full flex h-full ">
           <span className="w-1/4 flex items-center justify-center h-full text-slate-400">
             <BottomMenuItem title="Account">
@@ -66,9 +53,7 @@ export const BottomFixedMenu = () => {
         </div>
       </div>
       <div>
-        {openSearch ? (
-          <BottomMenuSearchBar height={height} open={openSearch} />
-        ) : null}
+        {openSearch ? <BottomMenuSearchBar /> : null}
 
         <CartSidePopup open={openCart} hideFn={handleCloseCart} />
       </div>

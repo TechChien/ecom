@@ -3,8 +3,9 @@ import { ProductPrice } from "../Trending/ProductPrice";
 import { ProductTitle } from "../Trending/ProductTitle";
 import { Stars } from "../Trending/Stars";
 import { ImageWindow } from "../Trending/ImageWindow";
-
+import { useTranslation } from "react-i18next";
 export const FeaturingItem = ({ ...props }) => {
+  const { t } = useTranslation();
   const { score, comments, title, price, originalPrice, bgImg } = props;
 
   return (
@@ -14,7 +15,7 @@ export const FeaturingItem = ({ ...props }) => {
       </div>
       <Heart />
       <Stars score={score} comments={comments} />
-      <ProductTitle title={title} />
+      <ProductTitle title={t(title)} />
       <ProductPrice price={price} originalPrice={originalPrice} />
     </div>
   );

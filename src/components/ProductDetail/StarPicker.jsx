@@ -1,29 +1,25 @@
 import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarFullStroke } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { forwardRef, useEffect, useState, createRef } from "react";
-// import { useMousePosition } from "../utils/useMousePosition";
+import { forwardRef, useState } from "react";
 
 export const StarPicker = () => {
-  const [start, setStart] = useState(0);
-  const [width, setWidth] = useState(0);
-  // const { x, y } = useMousePosition();
   const [score, setScore] = useState({
     full: 0,
     empty: 5,
     half: 0,
   });
-  const starRef = createRef();
-
-  useEffect(() => {
-    setWidth(starRef.current.offsetWidth);
-    setStart(starRef.current.offsetLeft);
-  }, [starRef]);
 
   const handleClick = (e) => {
+    const startleft = document
+      .querySelector("#starcontainer")
+      .getBoundingClientRect().left;
+    const starWidth =
+      document.querySelector("#starcontainer").getBoundingClientRect().width /
+      5;
     const x = e.pageX;
-    const diff = x - start;
-    const result = diff / width;
+    const diff = x - startleft;
+    const result = diff / starWidth;
     const full = Math.round(result);
     const half = result - full > 0 ? 1 : 0;
     const empty = 5 - full - half;
@@ -45,20 +41,8 @@ export const StarPicker = () => {
       h = half,
       e = empty;
 
-    if (f) {
-      firstStar = <Star ref={starRef} icon={faStar} />;
-      f = f - 1;
-    } else if (h) {
-      firstStar = <Star ref={starRef} icon={faStarHalfStroke} />;
-      h = h - 1;
-    } else {
-      firstStar = <Star ref={starRef} icon={faStarFullStroke} />;
-      e = e - 1;
-    }
-
     return (
       <>
-        {firstStar}
         {Array.from(Array(f)).map((_, index) => (
           <Star key={index} icon={faStar} />
         ))}
@@ -73,7 +57,7 @@ export const StarPicker = () => {
   };
 
   return (
-    <div className="flex" onClick={handleClick}>
+    <div id="starcontainer" className="flex" onClick={handleClick}>
       {render()}
     </div>
   );

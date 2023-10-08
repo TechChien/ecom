@@ -4,6 +4,9 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Heading } from "../Heading";
 import { FeaturingItem } from "../Featuring/FeaturingItem";
 
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+
 const relatedItems = [
   {
     score: 5,
@@ -40,12 +43,17 @@ const relatedItems = [
 ];
 
 export const RelatedProduct = () => {
+  const { t } = useTranslation();
+  const products = useSelector((state) => state.product.data);
+
+  const relatedItems = products;
+
   return (
     <div className="mt-6">
       <div className="flex w-full my-4">
-        <Heading title="Related Products" />
+        <Heading title={t("heading.related")} />
         <div className="hover:text-white mt-4 ms-auto ">
-          view all
+          {t("banner.lower.viewall")}
           <span className="ms-2">
             <FontAwesomeIcon icon={faArrowRight} />
           </span>

@@ -1,0 +1,272 @@
+{
+  "header": {
+    "myaccount": "我的帳戶",
+    "ordertracking": "訂單追蹤",
+    "women": "女性",
+    "men": "男性",
+    "sport": "運動",
+    "total": "總計"
+  },
+  "cart": {
+    "checkout": "結帳",
+    "viewcart": "查看購物車",
+    "subtotal": "小計",
+    "header_one": "{{count}}項目在{{item}}",
+    "header_other": "{{count}}項目在{{item}}",
+    "cart": "購物車",
+    "amount": "數量",
+    "discount": "折購",
+    "summary": "總結"
+  },
+  "popupMenu": {
+    "Women": {
+      "title": "女性",
+      "WOMENCLOTHING": {
+        "title": "女性服裝",
+        "Dresses": "連衣裙",
+        "TopsTees": "上衣與T恤",
+        "JacketsCoats": "夾克與外套",
+        "PantsCapris": "褲子與七分褲",
+        "Sweaters": "毛衣",
+        "Costumes": "服裝",
+        "HoodiesSweatshirts": "連帽衫與運動衫",
+        "PajamasRobes": "睡衣與浴袍",
+        "Shorts": "短褲",
+        "Swimwear": "泳裝"
+      },
+      "JEWELRY": {
+        "title": "珠寶飾品",
+        "Accessories": "配飾",
+        "BagsPurses": "包袋與錢包",
+        "Necklaces": "項鍊",
+        "Rings": "戒指",
+        "Earrings": "耳環",
+        "Bracelets": "手鐲",
+        "BodyJewelry": "身體飾品"
+      },
+      "BEAUTY": {
+        "title": "美容",
+        "BathAccessories": "浴室用品",
+        "MakeupCosmetics": "化妝品與化妝品",
+        "SkinCare": "護膚",
+        "HairCare": "髮護",
+        "EssentialOils": "精油",
+        "Fragrances": "香水",
+        "SoapsBathBombs": "肥皂與浴球",
+        "FaceMasksCoverings": "面膜與口罩",
+        "SpaKitsGifts": "水療套裝與禮品"
+      },
+      "TOPBRANDS": {
+        "title": "熱銷品牌",
+        "seemorebrand": "全部品牌"
+      }
+    }
+  },
+  "searchBar": {
+    "allmenu": "所有品項",
+    "products": "1095 件商品",
+    "placeholder": "搜尋商品",
+    "btn_text": "搜尋"
+  },
+  "category": {
+    "Beauty": {
+      "title": "美容",
+      "subcategory": {
+        "Makeup": "化妝品",
+        "SkinCare": "護膚品",
+        "HairCare": "護髮品",
+        "Fragrance": "香氛",
+        "FootHandCare": "足部和手部護理",
+        "ToolsAccessories": "工具和配件",
+        "ShaveHairRemoval": "修容和除毛",
+        "PersonalCare": "個人護理"
+      }
+    },
+    "Electronic": {
+      "title": "電子產品",
+      "subcategory": {
+        "Camera": "相機",
+        "CellPhones": "手機",
+        "Computers": "電腦",
+        "GPS": "GPS與導航",
+        "Headphones": "耳機",
+        "HomeAudio": "家庭音響",
+        "VedioProjectors": "影音投影",
+        "WearableTechnology": "可穿戴科技"
+      }
+    },
+    "WomenFashion": {
+      "title": "女裝時尚",
+      "subcategory": {
+        "Clothing": "服裝",
+        "Shoes": "鞋子",
+        "Jewelry": "珠寶飾品",
+        "Watches": "手錶",
+        "Handbags": "手提包",
+        "Accessories": "配飾"
+      }
+    },
+    "MenFashion": {
+      "title": "男裝時尚"
+    },
+    "GirlFashion": {
+      "title": "女童時尚"
+    },
+    "BoyFashion": {
+      "title": "男童時尚"
+    },
+    "HealthHousehold": {
+      "title": "健康與家居"
+    },
+    "HomeKitchen": {
+      "title": "家居與廚房",
+      "subcategory": {
+        "KitchenSection": "廚房與餐飲",
+        "Kitchen": "廚房",
+        "DiningRoom": "餐廳",
+        "Pantry": "餐具室",
+        "GreatRoom": "客廳",
+        "BreakfastNook": "早餐角",
+        "LivingSection": "生活空間",
+        "LivingRoom": "客廳",
+        "FamilyRoom": "家庭空間",
+        "Sunroom": "陽光房",
+        "BedSection": "床上與浴室",
+        "BathRoom": "浴室",
+        "PowderRoom": "化妝室",
+        "Bedroom": "臥室",
+        "StorageCloset": "儲藏與壁櫥",
+        "BabyKids": "嬰兒與兒童",
+        "UtilitySection": "公共事務與工具",
+        "Laundry": "洗衣",
+        "Garage": "車庫",
+        "Mudroom": "積泥室",
+        "OutdoorSection": "戶外空間",
+        "Landscape": "風景",
+        "Patio": "庭院",
+        "Deck": "露臺",
+        "Pool": "游泳池",
+        "Backyard": "後院",
+        "Porch": "門廊",
+        "Exterior": "外部",
+        "OutdoorKitchen": "戶外廚房",
+        "FrontYard": "前院",
+        "Driveway": "車道",
+        "Poolhouse": "游泳池房"
+      }
+    },
+    "PetSupplies": {
+      "title": "寵物用品"
+    },
+    "Sports": {
+      "title": "運動"
+    }
+  },
+  "footer": {
+    "help": {
+      "title": "幫助與聯絡方式",
+      "account": "您的帳戶",
+      "order": "您的訂單",
+      "shippingRate": "運費資訊",
+      "returns": "退換貨政策",
+      "assistant": "助手",
+      "help": "幫助",
+      "contact": "聯絡我們"
+    },
+    "category": {
+      "title": "所有類別"
+    },
+    "payment": {
+      "title": "付款資訊",
+      "bc": "商務卡",
+      "swp": "點數購物",
+      "ryb": "儲值餘額",
+      "paypal": "Paypal"
+    },
+    "about": {
+      "title": "關於我們",
+      "company": "公司資訊",
+      "news": "最新消息",
+      "investor": "投資者",
+      "careers": "職業發展",
+      "policies": "政策",
+      "customer": "客戶評價"
+    },
+    "subscribe": {
+      "jon": "訂閱我們的電子通知",
+      "adv": "獲取有關我們最新商店和",
+      "so": "特別優惠的電子郵件",
+      "placeholder": "您的電子郵件地址",
+      "signup": "註冊"
+    }
+  },
+  "banner": {
+    "upper": {
+      "title": "瘋狂特賣",
+      "Shop": "立即下單",
+      "category1": {
+        "title": "在這裡找優惠",
+        "subtitle": "客廳椅子"
+      },
+      "category2": {
+        "title": "天天打折",
+        "subtitle": "辦公室服裝"
+      }
+    },
+    "lower": {
+      "Gatdets": "小工具",
+      "Beauty": "美容",
+      "HomeDecor": "家居裝飾",
+      "viewall": "看更多"
+    }
+  },
+  "heading": {
+    "trending": "熱門商品",
+    "feature": "特色商品",
+    "related": "相關商品"
+  },
+  "slider": {
+    "image1": {
+      "category": "鞋履時尚",
+      "title": "快來拿取",
+      "subtitle": "全新鞋履"
+    },
+    "image2": {
+      "category": "時尚速配",
+      "title": "搭配你的衣櫥",
+      "subtitle": "擁有奢華物品"
+    },
+    "image3": {
+      "category": "快速優惠",
+      "title": "木質極簡沙發",
+      "subtitle": "額外5折優惠"
+    },
+    "image4": {
+      "category": "最佳優惠",
+      "title": "家庭運動配件",
+      "subtitle": "挑戰極限"
+    }
+  },
+  "product": {
+    "p1": "哥倫比亞男士Ascender軟殼前拉鍊夾克",
+    "p2": "女士彈性拉繩牛仔打底褲",
+    "p3": "黑色女士外套裙",
+    "p4": "時尚休閒套裝舒適針織毛衣短袖時尚家居服套裝",
+    "p5": "男士運動健身健走運動鞋",
+    "p6": "耐克女士低頂運動鞋",
+    "p7": "步行鞋運動鞋女士",
+    "p8": "女士平底尖頭鞋",
+    "p9": "現代款絨布軟體沙發實木",
+    "p10": "無線藍牙頭戴式耳機",
+    "p11": "可調光木質LED吸頂燈",
+    "p12": "Iwell帶門和3個抽屜的儲物櫃",
+    "p13": "耐克男士Free Rn 2018跑步鞋"
+  },
+  "stock": {
+    "stock": "庫存",
+    "sold": "賣出"
+  },
+  "clock": {
+    "offerend": "限時搶購"
+  }
+}

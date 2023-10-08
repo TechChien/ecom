@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 export const MenuSummary = () => {
+  const { t } = useTranslation();
   const items = useSelector((state) => state["cart"]?.items);
   const products = useSelector((state) => state.product.data);
 
@@ -13,7 +15,7 @@ export const MenuSummary = () => {
 
   return (
     <div className="flex flex-col">
-      <span className="text-sm">Total</span>
+      <span className="text-sm">{t("header.total")}</span>
       <span className="text-xl">
         ${buyItems.reduce((acc, b) => acc + +b.price * +b.amount, 0)}
       </span>

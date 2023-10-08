@@ -8,27 +8,28 @@ import slider2 from "../../assets/slider/slider2.jpg";
 import slider3 from "../../assets/slider/slider3.jpg";
 
 import { TouchedSlider } from "../TouchedSlider";
+import { useTranslation } from "react-i18next";
 
 const imageContext = [
   {
-    category: "Shoes Fashion",
-    title: "Come and Get it",
-    subtitle: "BRAND NEW SHOES",
+    category: "slider.image1.category",
+    title: "slider.image1.title",
+    subtitle: "slider.image1.subtitle",
   },
   {
-    category: "Quick Fashion",
-    title: "Fit your wardrobe",
-    subtitle: "WITH LUXURY ITEMS",
+    category: "slider.image2.category",
+    title: "slider.image2.title",
+    subtitle: "slider.image2.subtitle",
   },
   {
-    category: "Quick Offer",
-    title: "Wooden Minimal Sofa",
-    subtitle: "Extra 50% OFF",
+    category: "slider.image3.category",
+    title: "slider.image3.title",
+    subtitle: "slider.image3.subtitle",
   },
   {
-    category: "Best Deals",
-    title: "Home Workout Accessories",
-    subtitle: "PUSH THE LIMIT",
+    category: "slider.image4.category",
+    title: "slider.image4.title",
+    subtitle: "slider.image4.subtitle",
   },
 ];
 
@@ -43,32 +44,11 @@ export const Slider = () => {
     );
   };
 
-  return (
-    <TouchedSlider images={images} render={renderFn(images)} dotDisplay />
-    // <div className="min-w-full h-[15rem] sm:h-[25rem] md:min-w-[75%] md:h-[650px] relative mt-4 md:mt-0 md:flex justify-center items-end overflow-hidden">
-    //   {images.map((image, index) => {
-    //     return (
-    //       <SliderItem
-    //         key={index}
-    //         imgSrc={image}
-    //         index={index}
-    //         curPostion={curPostion}
-    //         mode="landscape"
-    //       >
-    //         <ImageWord
-    //           category={imageContext[index].category}
-    //           title={imageContext[index].title}
-    //           subtitle={imageContext[index].subtitle}
-    //         />
-    //       </SliderItem>
-    //     );
-    //   })}
-
-    // </div>
-  );
+  return <TouchedSlider images={images} render={renderFn(images)} dotDisplay />;
 };
 
 const DisplayFrame = forwardRef((props, ref) => {
+  const { t } = useTranslation();
   const {
     handlers: {
       touchStartHandler,
@@ -96,9 +76,10 @@ const DisplayFrame = forwardRef((props, ref) => {
     >
       {children}
       <ImageWord
-        category={imageContext[index].category}
-        title={imageContext[index].title}
-        subtitle={imageContext[index].subtitle}
+        category={t(imageContext[index].category)}
+        title={t(imageContext[index].title)}
+        subtitle={t(imageContext[index].subtitle)}
+        t={t}
       />
     </div>
   );

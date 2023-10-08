@@ -1,54 +1,58 @@
+import { useTranslation } from "react-i18next";
+
 const infoItems = [
   {
-    title: "Help & Contact",
+    title: "footer.help.title",
     list: [
-      "Your Account",
-      "Your Orders",
-      "Shipping Rates",
-      "Returns",
-      "Assistant",
-      "Help",
-      "Contact us",
+      "footer.help.account",
+      "footer.help.order",
+      "footer.help.shippingRate",
+      "footer.help.returns",
+      "footer.help.assistant",
+      "footer.help.help",
+      "footer.help.contact",
     ],
   },
   {
-    title: "All Categories",
+    title: "footer.category.title",
     list: [
-      "Beauty",
-      "Electronic",
-      "Women's Fashion",
-      "Men's Fashion",
-      "Girl Fashion",
-      "Boy's Fashion",
-      "Health & Household",
-      "Home & Kitchen",
-      "Pet Supplies",
-      "Sports",
+      "category.Beauty.title",
+      "category.Electronic.title",
+      "category.WomenFashion.title",
+      "category.MenFashion.title",
+      "category.GirlFashion.title",
+      "category.BoyFashion.title",
+      "category.HealthHousehold.title",
+      "category.HomeKitchen.title",
+      "category.PetSupplies.title",
+      "category.Sports.title",
     ],
   },
   {
-    title: "Payment Info",
+    title: "footer.payment.title",
     list: [
-      "Business Card",
-      "Shop with Points",
-      "Reload Your Balance",
-      "Paypal",
+      "footer.payment.bc",
+      "footer.payment.swp",
+      "footer.payment.ryb",
+      "footer.payment.paypal",
     ],
   },
   {
-    title: "About Us",
+    title: "footer.about.title",
     list: [
-      "Company Info",
-      "News",
-      "Investors",
-      "Careers",
-      "Policies",
-      "Customer reviews",
+      "footer.about.company",
+      "footer.about.news",
+      "footer.about.investor",
+      "footer.about.careers",
+      "footer.about.policies",
+      "footer.about.customer",
     ],
   },
 ];
 
 export const Information = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-slate-200 text-slate-500 pt-4 md:pt-16 pb-8">
       <div className="container mx-auto flex flex-col">
@@ -56,12 +60,12 @@ export const Information = () => {
           {infoItems.map((info) => (
             <div className="w-1/4" key={info.title}>
               <h1 className="text-xl whitespace-nowrap font-bold text-black">
-                {info.title}
+                {t(info.title)}
               </h1>
               <ul className="flex flex-col text-sm gap-3 mt-3">
                 {info.list.map((item) => (
                   <li className="hover:text-white whitespace-nowrap" key={item}>
-                    {item}
+                    {t(item)}
                   </li>
                 ))}
               </ul>

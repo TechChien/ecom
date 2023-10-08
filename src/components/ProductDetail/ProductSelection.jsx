@@ -13,7 +13,7 @@ import { TableDisplay } from "./TableDisplay";
 import { Reviews } from "./Reviews";
 import { ReviewForm } from "./ReviewForm";
 
-const headerItem = ["Size", "Bust", "Walst", "HIp"];
+const headerItem = ["Size", "Bust", "Walst", "Hip"];
 
 const dataItems = [
   ["XS", "82.5", "62", "87.5"],

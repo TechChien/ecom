@@ -10,13 +10,17 @@ export const CategoriesItem = ({ icon, title, renderPopup, clickHandler }) => {
     >
       <div className="flex gap-3 items-center">
         <span className="group-hover:text-white">
-          <FontAwesomeIcon icon={icon} />
+          <FontAwesomeIcon icon={icon} className="text-sm lg:text-base" />
         </span>
-        <span className="text-xl group-hover:text-white">{title}</span>
+        <span className="text-base lg:text-xl group-hover:text-white">
+          {title}
+        </span>
       </div>
 
       <div className="ms-auto">
-        {renderPopup ? <FontAwesomeIcon icon={faAngleRight} /> : null}
+        {renderPopup ? (
+          <FontAwesomeIcon className="text-sm lg:text-xl" icon={faAngleRight} />
+        ) : null}
       </div>
     </li>
   );

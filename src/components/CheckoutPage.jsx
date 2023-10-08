@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 import { ImageWindow } from "./Trending/ImageWindow";
-
+import { useTranslation } from "react-i18next";
 export const CheckoutPage = () => {
+  const { t } = useTranslation();
   const items = useSelector((state) => state["cart"]?.items);
   const products = useSelector((state) => state.product.data);
 
@@ -93,19 +94,19 @@ export const CheckoutPage = () => {
       <div className="w-full  md:w-1/2">
         <div className="w-full md:w-1/2  p-4 rounded-md md:mt-14">
           <h1 className="text-lg md:text-2xl text-black font-bold">
-            &bull; SUMMARY
+            &bull; {t("cart.summary")}
           </h1>
           <ul className="flex flex-col gap-3 md:text-xl font-bold mt-4">
             <li className="w-full flex">
-              <h2 className="text-lg">Subtotal</h2>
+              <h2 className="text-lg">{t("cart.subtotal")}</h2>
               <span className="ms-auto">${subTotal}</span>
             </li>
             <li className="w-full flex">
-              <h2 className="text-lg">Discount</h2>
+              <h2 className="text-lg">{t("cart.discount")}</h2>
               <span className="ms-auto">-${Math.abs(discount)}</span>
             </li>
             <li className="w-full flex text-4xl leading-loose">
-              <h2 className="text-lg">Total</h2>
+              <h2 className="text-lg">{t("header.total")}</h2>
               <span className="ms-auto text-lg ">${subTotal + discount}</span>
             </li>
           </ul>
@@ -117,7 +118,9 @@ export const CheckoutPage = () => {
                 <ImageWindow heart={false} hover={false} bgImg={b.bgImg} />
               </div>
               <div className="w-4/5">
-                <blockquote className="text-xl font-bold">{b.title}</blockquote>
+                <blockquote className="text-xl font-bold">
+                  {t(b.title)}
+                </blockquote>
                 <blockquote className="text-xl font-bold">
                   x{b.amount}
                 </blockquote>

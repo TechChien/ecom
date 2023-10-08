@@ -44,7 +44,7 @@ const DisplayFrame = forwardRef((props, ref) => {
       onMouseMove={mouseMoveHandler}
       onMouseUp={mouseEndHandler}
       onMouseLeave={mouseEndHandler}
-      className="touch-none h-[50rem] whitespace-nowrap  relative overflow-hidden"
+      className="touch-none h-[50rem] w-full whitespace-nowrap  relative overflow-hidden"
     >
       {children}
     </div>

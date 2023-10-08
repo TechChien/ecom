@@ -16,9 +16,13 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "i18next": "^23.5.1",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-intervalplural-postprocessor": "^3.0.0",
     "rc-slider": "^10.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^13.2.2",
     "react-redux": "^8.1.2",
     "react-router": "^6.15.0",
     "react-router-dom": "^6.15.0"

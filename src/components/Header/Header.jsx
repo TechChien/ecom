@@ -1,18 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import { Menu } from "./Menu/Menu";
 import { DropDownList } from "../DropDown/DropDownList";
 
-const ENG = "ENG";
-const SPA = "SPA";
-const JAP = "JAP";
-const TW = "TW";
+const en = "en";
+const zh = "zh";
 
 const languagelist = [
-  { title: "ENG", value: ENG },
-  { title: "SPA", value: SPA },
-  { title: "JAP", value: JAP },
-  { title: "TW", value: TW },
+  { title: "EN", value: en },
+  { title: "ZH", value: zh },
 ];
 
 const currencylist = [
@@ -24,7 +22,13 @@ const currencylist = [
 
 export const Header = () => {
   const [CUR, setCUR] = useState(currencylist[0]);
-  const [LAN, setLAN] = useState(languagelist[0]);
+  const [LAN, setLAN] = useState(languagelist[1]);
+
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(LAN.value);
+  }, [LAN]);
 
   const getCurrencyListValue = (value) => {
     setCUR(value);
@@ -38,10 +42,10 @@ export const Header = () => {
     <header className="min-w-full  text-slate-700 mt-2 ">
       <nav className="md:flex gap-2  hidden">
         <div className="ms-auto px-2 font-bold ">
-          <NavLink to="about">My Account</NavLink>
+          <NavLink to="about">{t("header.myaccount")}</NavLink>
         </div>
         <NavLink className="px-2 font-bold " to="help">
-          Order Tracking
+          {t("header.ordertracking")}
         </NavLink>
         <DropDownList
           options={currencylist}

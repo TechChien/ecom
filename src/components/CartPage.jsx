@@ -8,10 +8,12 @@ import { updateCartItemAmount, deleteCart } from "../redux/reducer/cartSlice";
 
 import { ImageWindow } from "./Trending/ImageWindow";
 
+import { useTranslation } from "react-i18next";
+
 export const CartPage = () => {
   const items = useSelector((state) => state["cart"]?.items);
   const products = useSelector((state) => state.product.data);
-
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const buyItems = items.map((item) => {
@@ -71,7 +73,7 @@ export const CartPage = () => {
                   <ImageWindow heart={false} hover={false} bgImg={item.bgImg} />
                 </div>
                 <p className="w-3/5 text-sm lg:text-md font-bold">
-                  {item.title}
+                  {t(item.title)}
                 </p>
                 <div
                   onClick={handleRemove(item.productId)}
@@ -122,7 +124,7 @@ export const CartPage = () => {
                       />
                     </div>
                     <p className="w-3/5 text-sm lg:text-md font-bold">
-                      {b.title}
+                      {t(b.title)}
                     </p>
                   </div>
                 </td>

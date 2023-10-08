@@ -2,59 +2,79 @@ import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { ImageWindow } from "../../Trending/ImageWindow";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 export const MegaMenu = ({ show, hideFn }) => {
+  const megaItems = useSelector((state) => state.category.popupMenu);
+  const { t } = useTranslation();
+
+  const [enter, setEnter] = useState(false);
+
+  useEffect(() => {
+    let timerId = null;
+    if (show && !enter) {
+      timerId = setTimeout(() => hideFn(), 1000);
+    }
+
+    return () => {
+      if (timerId) clearTimeout(timerId);
+    };
+  }, [show, enter, setEnter, hideFn]);
+
   let content = null;
   if (show) {
     content = (
       <div
-        onMouseLeave={hideFn}
+        onMouseEnter={() => setEnter(true)}
+        onMouseLeave={() => {
+          setEnter(false);
+          hideFn();
+        }}
         className="py-8 z-20 bg-slate-200 absolute top-[7rem] w-screen"
       >
-        <div className="container mx-auto flex gap-20 sm:text-sm  md:text-md xl:text-xl">
+        <div className="container mx-auto flex gap-12 sm:text-xs  md:text-sm xl:text-lg">
           <div className="">
-            <div className="font-bold ">WOMEN'S CLOTHING</div>
+            <div className="font-bold ">
+              {t(`${megaItems[0].subcategory[0].title}`)}
+            </div>
             <ul className="flex flex-col gap-y-3 mt-4">
-              <li className="hover:text-white">Dresses</li>
-              <li className="hover:text-white">Tops & Tees</li>
-              <li className="hover:text-white">Jackets & Coats</li>
-              <li className="hover:text-white">Pants & Capris</li>
-              <li className="hover:text-white">Sweaters</li>
-              <li className="hover:text-white">Costumes</li>
-              <li className="hover:text-white">Hoodies & Sweatshirts</li>
-              <li className="hover:text-white">Pajamas & Robes</li>
-              <li className="hover:text-white">Shorts</li>
-              <li className="hover:text-white">Swimwear</li>
+              {megaItems[0].subcategory[0].items.map((item) => (
+                <li key={item} className="whitespace-nowrap hover:text-white">
+                  {t(item)}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="">
-            <div className="font-bold ">JEWELRY</div>
+            <div className="font-bold ">
+              {t(`${megaItems[0].subcategory[1].title}`)}
+            </div>
             <ul className="flex flex-col gap-y-3 mt-4">
-              <li className="hover:text-white">Accessories</li>
-              <li className="hover:text-white">Bags & Purses</li>
-              <li className="hover:text-white">Necklaces</li>
-              <li className="hover:text-white">Rings</li>
-              <li className="hover:text-white">Earrings</li>
-              <li className="hover:text-white">Bracelets</li>
-              <li className="hover:text-white">Body Jewelry</li>
+              {megaItems[0].subcategory[1].items.map((item) => (
+                <li key={item} className="whitespace-nowrap hover:text-white">
+                  {t(item)}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="">
-            <div className="font-bold ">BEAUTY</div>
+            <div className="font-bold ">
+              {t(`${megaItems[0].subcategory[2].title}`)}
+            </div>
             <ul className="flex flex-col gap-y-3 mt-4">
-              <li className="hover:text-white">Bath Accessories</li>
-              <li className="hover:text-white">Makeup & Cosmetics</li>
-              <li className="hover:text-white">Skin Care</li>
-              <li className="hover:text-white">Hair Care</li>
-              <li className="hover:text-white">Essential Oils</li>
-              <li className="hover:text-white">Fragrances</li>
-              <li className="hover:text-white">Soaps & Bath Bombs</li>
-              <li className="hover:text-white">Face Masks & Coverings</li>
-              <li className="hover:text-white">Spa Kits & Gifts</li>
+              {megaItems[0].subcategory[2].items.map((item) => (
+                <li key={item} className="whitespace-nowrap hover:text-white">
+                  {t(item)}
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <div className="font-bold ">TOP BRANDS</div>
+            <div className="font-bold ">
+              {t("popupMenu.Women.TOPBRANDS.title")}
+            </div>
             <div className="flex gap-6 mt-4">
               <ul className="flex flex-col space-y-3">
                 <li className="hover:text-white">Nike</li>
@@ -73,20 +93,20 @@ export const MegaMenu = ({ show, hideFn }) => {
               </ul>
             </div>
             <div className="hover:text-white mt-4">
-              View all brands{"   "}
-              <span>
+              {t("popupMenu.Women.TOPBRANDS.seemorebrand")}
+              <span className="ms-2">
                 <FontAwesomeIcon icon={faArrowRight} />
               </span>
             </div>
           </div>
           <div>
-            <div className="h-full w-[25rem] hidden lg:block">
+            <div className="h-full w-[16rem] hidden lg:block">
               <div className="w-10/12 mx-auto relative mt-6 md:mt-8 overflow-hidden">
                 <ImageWindow bgImg="apparel4" heart={false} hover={false}>
-                  <div className="font-bold text-violet-900 text-4xl translate-y-[15rem] translate-x-[10%] absolute inset-0">
+                  <div className="font-bold text-violet-900 text-2xl translate-y-[13rem] translate-x-[10%] absolute inset-0">
                     MOST WANTED
                   </div>
-                  <div className=" text-md font-bold w-[10rem] h-[4rem] flex justify-center items-center px-4 py-4 bg-orange-500 translate-y-[18rem] translate-x-[60%]  rounded-full hover:bg-orange-300 text-white absolute inset-0">
+                  <div className=" text-sm font-bold w-[8rem] h-[3rem] flex justify-center items-center px-4 py-2 bg-orange-500 translate-y-[16rem] translate-x-[45%]  rounded-full hover:bg-orange-300 text-white absolute inset-0">
                     Order Now
                   </div>
                 </ImageWindow>

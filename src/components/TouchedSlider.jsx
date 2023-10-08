@@ -177,20 +177,6 @@ export const TouchedSlider = ({
         id="SlideContainer"
         className="relative align-middle w-full  overflow-hidden "
       >
-        {/* <div
-          onTouchStart={touchStartHandler}
-          onTouchMove={touchMoveHandler}
-          onTouchEnd={touchEndHandler}
-          onMouseDown={mouseStartHandler}
-          onMouseMove={mouseMoveHandler}
-          onMouseUp={mouseEndHandler}
-          onMouseLeave={mouseEndHandler}
-          ref={ref}
-          id="DisplayFrame"
-          className="touch-none w-[60rem] h-[30rem] max-h-[40rem] whitespace-nowrap overflow-x-hidden  text-center z-10 mx-auto "
-        >
-          {renderDisplayFrame}
-        </div> */}
         {render(handlers, position, ref, renderDisplayFrame())}
         {dotDisplay ? (
           <div className="absolute flex gap-3 bottom-10 left-[45%]">
@@ -231,7 +217,7 @@ const ImageToDisplay = forwardRef((props, ref) => {
       id={id}
       className="touch-none inline-block w-full h-full  align-top  transition-all duration-500"
     >
-      <img className="h-full max-w-full  md:object-fill" src={image} />
+      <img className="h-full w-full  object-fill" src={image} />
     </div>
   );
 });

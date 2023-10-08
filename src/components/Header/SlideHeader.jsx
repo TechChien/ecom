@@ -6,12 +6,14 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 import { Fragment } from "react";
 
+import { useTranslation } from "react-i18next";
+
 export const SlideHeader = ({ open, hideFn }) => {
   const category = useSelector((state) => state.category.categories);
 
   const popmenu = useSelector((state) => state.category.popupMenu);
 
-  // console.log(category, popmenu);
+  const { t } = useTranslation();
 
   const visibleClass = open ? "translate-x-0" : "-translate-x-full";
 
@@ -19,7 +21,7 @@ export const SlideHeader = ({ open, hideFn }) => {
     return (
       <span className="text-xl flex">
         {icon ? <FontAwesomeIcon icon={icon} /> : null}
-        <span className="ps-2">{title}</span>
+        <span className="ps-2">{t(title)}</span>
         {arrow ? (
           <span className="ms-auto pe-2">
             <FontAwesomeIcon icon={faAngleDown} />
@@ -34,7 +36,7 @@ export const SlideHeader = ({ open, hideFn }) => {
       className={`fixed top-0 left-0 ${visibleClass} w-2/3 sm:w-1/2 z-30 bg-white shadow-md transition-all duration-300 h-screen overflow-auto md:hidden `}
     >
       <h1 className="flex text-white px-2 py-4 bg-blue-400 rounded-br-[50px]">
-        <span className="">All department</span>
+        <span className="">{t("searchBar.allmenu")}</span>
         <span onClick={hideFn} className="ms-auto pe-4 text-xl">
           x
         </span>
@@ -45,7 +47,7 @@ export const SlideHeader = ({ open, hideFn }) => {
             key={index}
             {...{
               title: renderIcon(
-                cate.title,
+                t(cate.title),
                 cate.subcategory.length > 0,
                 cate.icon
               ),
@@ -59,12 +61,12 @@ export const SlideHeader = ({ open, hideFn }) => {
                     <Fragment>
                       {subcate.title ? (
                         <h1 className="ps-6 font-bold text-md">
-                          {subcate.title}
+                          {t(subcate.title)}
                         </h1>
                       ) : null}
                       <ul className="ps-8">
                         {subcate.items.map((item) => (
-                          <li key={item}>{item}</li>
+                          <li key={item}>{t(item)}</li>
                         ))}
                       </ul>
                     </Fragment>
@@ -91,11 +93,11 @@ export const SlideHeader = ({ open, hideFn }) => {
                   <li key={index} className="flex flex-col">
                     <Fragment>
                       {subcate.title ? (
-                        <h1 className="ps-4 font-bold ">{subcate.title}</h1>
+                        <h1 className="ps-4 font-bold ">{t(subcate.title)}</h1>
                       ) : null}
                       <ul className="ps-6">
                         {subcate.items.map((item) => (
-                          <li key={item}>{item}</li>
+                          <li key={item}>{t(item)}</li>
                         ))}
                       </ul>
                     </Fragment>

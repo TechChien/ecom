@@ -12,6 +12,7 @@ import { ProductOnSale } from "./components/ProductOnSale";
 import { CateoryPage } from "./components/CateoryPage";
 import { CartPage } from "./components/CartPage";
 import { CheckoutPage } from "./components/CheckoutPage";
+import { I18nPage } from "./components/i18nPage";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path=":category" element={<CateoryPage />} />
       <Route path="/Cart" element={<CartPage />} />
       <Route path="/Checkout" element={<CheckoutPage />} />
+      <Route path="/I18n" element={<I18nPage />} />
     </Route>
   )
 );

@@ -1,36 +1,36 @@
 import { Fragment } from "react";
-
+import { useTranslation } from "react-i18next";
 const context = {
   ["Beauty"]: {
     bg: "/src/assets/menu/menu_bg1.jpg",
     subcategory: [
       {
         items: [
-          "Makeup",
-          "Skin Care",
-          "Hair Care",
-          "Fragrance",
-          "Foot & Hand Care",
-          "Tools & Accessories",
-          "Shave & Hair Removal",
-          "Personal Care",
+          "category.Beauty.subcategory.Makeup",
+          "category.Beauty.subcategory.SkinCare",
+          "category.Beauty.subcategory.HairCare",
+          "category.Beauty.subcategory.Fragrance",
+          "category.Beauty.subcategory.FootHandCare",
+          "category.Beauty.subcategory.ToolsAccessories",
+          "category.Beauty.subcategory.ShaveHairRemoval",
+          "category.Beauty.subcategory.PersonalCare",
         ],
       },
     ],
   },
-  ["Eletronic"]: {
+  ["Electronic"]: {
     bg: "/src/assets/menu/menu_bg2.jpg",
     subcategory: [
       {
         items: [
-          "Camera",
-          "Cell Phones",
-          "Computers",
-          "GPS & Navigation",
-          "Headphones",
-          "Home Audio",
-          "Vedio Projectors",
-          "Wearable Technology",
+          "category.Electronic.subcategory.Camera",
+          "category.Electronic.subcategory.CellPhones",
+          "category.Electronic.subcategory.Computers",
+          "category.Electronic.subcategory.GPS",
+          "category.Electronic.subcategory.Headphones",
+          "category.Electronic.subcategory.HomeAudio",
+          "category.Electronic.subcategory.VedioProjectors",
+          "category.Electronic.subcategory.WearableTechnology",
         ],
       },
     ],
@@ -40,12 +40,12 @@ const context = {
     subcategory: [
       {
         items: [
-          "Clothing",
-          "Shoes",
-          "Jewelry",
-          "Watches",
-          "Handbags",
-          "Accessories",
+          "category.WomenFashion.subcategory.Clothing",
+          "category.WomenFashion.subcategory.Shoes",
+          "category.WomenFashion.subcategory.Jewelry",
+          "category.WomenFashion.subcategory.Watches",
+          "category.WomenFashion.subcategory.Handbags",
+          "category.WomenFashion.subcategory.Accessories",
         ],
       },
     ],
@@ -54,47 +54,55 @@ const context = {
     bg: "/src/assets/menu/menu_bg4.jpg",
     subcategory: [
       {
-        title: "Kitchen & Dining",
+        title: "category.HomeKitchen.subcategory.KitchenSection",
         items: [
-          "Kitchen",
-          "Dining Room",
-          "Pantry",
-          "Great Room",
-          "Breakfast Nook",
+          "category.HomeKitchen.subcategory.Kitchen",
+          "category.HomeKitchen.subcategory.DiningRoom",
+          "category.HomeKitchen.subcategory.Pantry",
+          "category.HomeKitchen.subcategory.GreatRoom",
+          "category.HomeKitchen.subcategory.BreakfastNook",
         ],
       },
       {
-        title: "Living",
-        items: ["Living Room", "Family Room", "Sunroom"],
-      },
-      {
-        title: "Bed & Bath",
+        title: "category.HomeKitchen.subcategory.LivingSection",
         items: [
-          "Bathroom Room",
-          "Powder Room",
-          "Bedroom",
-          "Storage & Closet",
-          "Baby & Kids",
+          "category.HomeKitchen.subcategory.LivingRoom",
+          "category.HomeKitchen.subcategory.FamilyRoom",
+          "category.HomeKitchen.subcategory.Sunroom",
         ],
       },
       {
-        title: "Utility",
-        items: ["Laundry", "Garage", "Mudroom"],
+        title: "category.HomeKitchen.subcategory.BedSection",
+        items: [
+          "category.HomeKitchen.subcategory.BathRoom",
+          "category.HomeKitchen.subcategory.PowderRoom",
+          "category.HomeKitchen.subcategory.Bedroom",
+          "category.HomeKitchen.subcategory.StorageCloset",
+          "category.HomeKitchen.subcategory.BabyKids",
+        ],
       },
       {
-        title: "Outdoor",
+        title: "category.HomeKitchen.subcategory.UtilitySection",
         items: [
-          "Landscape",
-          "Patio",
-          "Deck",
-          "Pool",
-          "Backyard",
-          "Porch",
-          "Exterior",
-          "Outdoor Kitchen",
-          "Front Yard",
-          "Driveway",
-          "Poolhouse",
+          "category.HomeKitchen.subcategory.Laundry",
+          "category.HomeKitchen.subcategory.Garage",
+          "category.HomeKitchen.subcategory.Mudroom",
+        ],
+      },
+      {
+        title: "category.HomeKitchen.subcategory.OutdoorSection",
+        items: [
+          "category.HomeKitchen.subcategory.Landscape",
+          "category.HomeKitchen.subcategory.Patio",
+          "category.HomeKitchen.subcategory.Deck",
+          "category.HomeKitchen.subcategory.Pool",
+          "category.HomeKitchen.subcategory.Backyard",
+          "category.HomeKitchen.subcategory.Porch",
+          "category.HomeKitchen.subcategory.Exterior",
+          "category.HomeKitchen.subcategory.OutdoorKitchen",
+          "category.HomeKitchen.subcategory.FrontYard",
+          "category.HomeKitchen.subcategory.Driveway",
+          "category.HomeKitchen.subcategory.Poolhouse",
         ],
       },
     ],
@@ -102,6 +110,8 @@ const context = {
 };
 
 export const CategoriesPopMenu = ({ hoverEl, open, xp, parentH, hideFn }) => {
+  const { t } = useTranslation();
+
   const content = () => {
     if (!open || !hoverEl || !context[hoverEl]) {
       return null;
@@ -127,7 +137,7 @@ export const CategoriesPopMenu = ({ hoverEl, open, xp, parentH, hideFn }) => {
           top: 0,
           opacity: 1,
           width: `${width}rem`,
-          zIndex: 10,
+          zIndex: 30,
           minHeight: `${parentH}px`,
         }}
         className={`absolute bg-cover bg-right-top`}
@@ -146,11 +156,11 @@ export const CategoriesPopMenu = ({ hoverEl, open, xp, parentH, hideFn }) => {
               <div className={cl} key={title ? title : items[0]}>
                 <ul className="flex flex-col gap-6">
                   {title ? (
-                    <li className="font-bold whitespace-nowrap">{title}</li>
+                    <li className="font-bold whitespace-nowrap">{t(title)}</li>
                   ) : null}
                   {items.map((item) => (
                     <li key={item} className="hover:text-white">
-                      {item}
+                      {t(item)}
                     </li>
                   ))}
                 </ul>

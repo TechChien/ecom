@@ -1,8 +1,10 @@
 import { useState } from "react";
 
+import { useTranslation } from "react-i18next";
+
 export const Accordion = ({ title, children, hasSign = true }) => {
   const [open, setOpen] = useState(false);
-
+  const { t } = useTranslation();
   const handleClick = () => {
     setOpen((o) => !o);
   };

@@ -2,6 +2,8 @@ import { Fragment, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
+import { useTranslation } from "react-i18next";
+
 import hipo from "../../../assets/hipo.png";
 import cart from "../../../assets/cart.png";
 import wishlist from "../../../assets/heart.png";
@@ -18,6 +20,7 @@ import { MENNAME, WOMENNAME, SPORTSNAME, BRAND, CART, WISHLIST } from "./items";
 import { Link } from "react-router-dom";
 
 export const Menu = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
   const handleClick = (e) => {
@@ -45,13 +48,13 @@ export const Menu = () => {
           </Link>
           <div className="md:flex hidden gap-12">
             <MenuItem name={WOMENNAME} istrigger>
-              Women
+              {t("header.women")}
               <span className="ms-2">
                 <FontAwesomeIcon icon={faAngleDown} />
               </span>
             </MenuItem>
-            <MenuItem name={MENNAME}>Men</MenuItem>
-            <MenuItem name={SPORTSNAME}>Sports</MenuItem>
+            <MenuItem name={MENNAME}> {t("header.men")}</MenuItem>
+            <MenuItem name={SPORTSNAME}> {t("header.sport")}</MenuItem>
           </div>
         </MenuList>
         <MenuList css="flex ms-auto md:gap-9 gap-4">

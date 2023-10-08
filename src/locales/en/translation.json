@@ -1,0 +1,272 @@
+{
+  "header": {
+    "myaccount": "My Account",
+    "ordertracking": "Order Tracking",
+    "women": "Women",
+    "men": "Men",
+    "sport": "Sports",
+    "total": "Total"
+  },
+  "cart": {
+    "checkout": "Checkout",
+    "viewcart": "View Cart",
+    "subtotal": "Subtotal",
+    "header_one": "{{count}} Item In {{item}}",
+    "header_other": "{{count}} Items In {{item}}",
+    "cart": "Cart",
+    "amount": "Amount",
+    "discount": "Discount",
+    "summary": "Summary"
+  },
+  "popupMenu": {
+    "Women": {
+      "title": "Women",
+      "WOMENCLOTHING": {
+        "title": "WOMEN'S CLOTHING",
+        "Dresses": "Dresses",
+        "TopsTees": "TopsTees",
+        "JacketsCoats": "Jackets & Coats",
+        "PantsCapris": "Pants & Capris",
+        "Sweaters": "Sweaters",
+        "Costumes": "Costumes",
+        "HoodiesSweatshirts": "Hoodies & Sweatshirts",
+        "PajamasRobes": "Pajamas & Robes",
+        "Shorts": "Shorts",
+        "Swimwear": "Swimwear"
+      },
+      "JEWELRY": {
+        "title": "JEWELRY",
+        "Accessories": "Accessories",
+        "BagsPurses": "Bags & Purses",
+        "Necklaces": "Necklaces",
+        "Rings": "Rings",
+        "Earrings": "Earrings",
+        "Bracelets": "Bracelets",
+        "BodyJewelry": "Body Jewelry"
+      },
+      "BEAUTY": {
+        "title": "BEAUTY",
+        "BathAccessories": "Bath Accessories",
+        "MakeupCosmetics": "Makeup & Cosmetics",
+        "SkinCare": "Skin Care",
+        "HairCare": "Hair Care",
+        "EssentialOils": "Essential Oils",
+        "Fragrances": "Fragrances",
+        "SoapsBathBombs": "Soaps & Bath Bombs",
+        "FaceMasksCoverings": "Face Masks & Coverings",
+        "SpaKitsGifts": "Spa Kits & Gifts"
+      },
+      "TOPBRANDS": {
+        "title": "TOP BRANDS",
+        "seemorebrand": "View all brands"
+      }
+    }
+  },
+  "searchBar": {
+    "allmenu": "All Departments",
+    "products": "1095 Products",
+    "placeholder": "search for product",
+    "btn_text": "search"
+  },
+  "category": {
+    "Beauty": {
+      "title": "Beauty",
+      "subcategory": {
+        "Makeup": "Makeup",
+        "SkinCare": "Skin Care",
+        "HairCare": "Skin Care",
+        "Fragrance": "Fragrance",
+        "FootHandCare": "Foot & Hand Care",
+        "ToolsAccessories": "Tools Accessories",
+        "ShaveHairRemoval": "Shave & Hair Removal",
+        "PersonalCare": "Personal Care"
+      }
+    },
+    "Electronic": {
+      "title": "Electronic",
+      "subcategory": {
+        "Camera": "Camera",
+        "CellPhones": "Cell Phones",
+        "Computers": "Computers",
+        "GPS": "GPS & Navigation",
+        "Headphones": "Headphones",
+        "HomeAudio": "Home Audio",
+        "VedioProjectors": "Vedio Projectors",
+        "WearableTechnology": "Wearable Technology"
+      }
+    },
+    "WomenFashion": {
+      "title": "Women's Fashion",
+      "subcategory": {
+        "Clothing": "Clothing",
+        "Shoes": "Shoes",
+        "Jewelry": "Jewelry",
+        "Watches": "Watches",
+        "Handbags": "Handbags",
+        "Accessories": "Accessories"
+      }
+    },
+    "MenFashion": {
+      "title": "Men's Fashion"
+    },
+    "GirlFashion": {
+      "title": "Girl's Fashion"
+    },
+    "BoyFashion": {
+      "title": "Boy's Fashion"
+    },
+    "HealthHousehold": {
+      "title": "Health & Household"
+    },
+    "HomeKitchen": {
+      "title": "Home & Kitchen",
+      "subcategory": {
+        "KitchenSection": "Kitchen & Dining",
+        "Kitchen": "Kitchen",
+        "DiningRoom": "Dining Room",
+        "Pantry": "Pantry",
+        "GreatRoom": "Great Room",
+        "BreakfastNook": "Breakfast Nook",
+        "LivingSection": "Living",
+        "LivingRoom": "Living Room",
+        "FamilyRoom": "Family Room",
+        "Sunroom": "Sunroom",
+        "BedSection": "Bed & Bath",
+        "BathRoom": "Bathroom",
+        "PowderRoom": "Powder Room",
+        "Bedroom": "Bedroom",
+        "StorageCloset": "Storage & Closet",
+        "BabyKids": "Baby & Kids",
+        "UtilitySection": "Utility",
+        "Laundry": "Laundry",
+        "Garage": "Garage",
+        "Mudroom": "Mudroom",
+        "OutdoorSection": "Outdoor",
+        "Landscape": "Landscape",
+        "Patio": "Patio",
+        "Deck": "Deck",
+        "Pool": "Pool",
+        "Backyard": "Backyard",
+        "Porch": "Porch",
+        "Exterior": "Exterior",
+        "OutdoorKitchen": "Outdoor Kitchen",
+        "FrontYard": "Front Yard",
+        "Driveway": "Driveway",
+        "Poolhouse": "Poolhouse"
+      }
+    },
+    "PetSupplies": {
+      "title": "Pet Supplies"
+    },
+    "Sports": {
+      "title": "Sports"
+    }
+  },
+  "footer": {
+    "help": {
+      "title": "Help & Contact",
+      "account": "Your Account",
+      "order": "Your Orders",
+      "shippingRate": "Shipping Rates",
+      "returns": "Returns",
+      "assistant": "Assistant",
+      "help": "Help",
+      "contact": "Contact us"
+    },
+    "category": {
+      "title": "All Categories"
+    },
+    "payment": {
+      "title": "Payment Info",
+      "bc": "Business Card",
+      "swp": "Shop with Points",
+      "ryb": "Reload Your Balance",
+      "paypal": "Paypal"
+    },
+    "about": {
+      "title": "About us",
+      "company": "Company Info",
+      "news": "News",
+      "investor": "Investors",
+      "careers": "Careers",
+      "policies": "Policies",
+      "customer": "Customer reviews"
+    },
+    "subscribe": {
+      "jon": "Join Out Newsletter",
+      "adv": "Get Emails updates about our lastest shop and",
+      "so": "special offers",
+      "placeholder": "Your email address",
+      "signup": "Sign up"
+    }
+  },
+  "banner": {
+    "upper": {
+      "title": "Brutal Sale",
+      "Shop": "Shop Now",
+      "category1": {
+        "title": "Get the deal in here",
+        "subtitle": "Living Room Chair"
+      },
+      "category2": {
+        "title": "Discount everyday",
+        "subtitle": "Office Outfit"
+      }
+    },
+    "lower": {
+      "Gatdets": "Gatdets",
+      "Beauty": "Beauty",
+      "HomeDecor": "HomeDecor",
+      "viewall": "view all"
+    }
+  },
+  "heading": {
+    "trending": "Trending Products",
+    "feature": "Featured Products",
+    "related": "Related Products"
+  },
+  "slider": {
+    "image1": {
+      "category": "Shoes Fashion",
+      "title": "Come and Get it",
+      "subtitle": "BRAND NEW SHOES"
+    },
+    "image2": {
+      "category": "Quick Fashion",
+      "title": "Fit your wardrobe",
+      "subtitle": "WITH LUXURY ITEMS"
+    },
+    "image3": {
+      "category": "Quick Offer",
+      "title": "Wooden Minimal Sofa",
+      "subtitle": "Extra 50% OFF"
+    },
+    "image4": {
+      "category": "Best Deals",
+      "title": "Home Workout Accessories",
+      "subtitle": "PUSH THE LIMIT"
+    }
+  },
+  "product": {
+    "p1": "Columbia Men's Ascender Softshell Front-zip Jacket",
+    "p2": "Women's Stretch Pull-On Jegging",
+    "p3": "Black Women's Coat Dress",
+    "p4": "Trendy Lounge Sets Cozy Knit Sweater Short Sleeve Fashion Loungewear Set",
+    "p5": "Men Sport Fitness Gym Jogging Walking",
+    "p6": "Nike Women's Low-Top Sneakers",
+    "p7": "Walking Shoe Sneaker Womens",
+    "p8": "Women's Flats Pointed Toe Shoes",
+    "p9": "Modern Velvet Upholstered Sofa Couch Solid Wood",
+    "p10": "Wireless Bluetooth On-Ear Headphones",
+    "p11": "Dimmable Wood LED Flush Mount Ceiling Light",
+    "p12": "Iwell Storage Cabinet with Door & 3 Drawers",
+    "p13": "Nike Mens Free Rn 2018 Running Shoe"
+  },
+  "stock": {
+    "stock": "stock",
+    "sold": "sold"
+  },
+  "clock": {
+    "offerend": "OFFER ENDS AT"
+  }
+}

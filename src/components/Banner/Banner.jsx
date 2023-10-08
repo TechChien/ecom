@@ -3,15 +3,15 @@ import { LowerBanner } from "./LowerBanner";
 
 const upperBannerItems = [
   {
-    category: "Brutal Sale",
-    title: "Get the deal in here",
-    subtitle: "Living Room Chair",
+    category: "banner.upper.title",
+    title: "banner.upper.category1.title",
+    subtitle: "banner.upper.category1.subtitle",
     srcImg: "banner1",
   },
   {
-    category: "Brutal Sale",
-    title: "Discount everyday",
-    subtitle: "Office Outfit",
+    category: "banner.upper.title",
+    title: "banner.upper.category2.title",
+    subtitle: "banner.upper.category2.subtitle",
     srcImg: "banner2",
   },
 ];
@@ -19,24 +19,36 @@ const upperBannerItems = [
 const lowerBannerItems = [
   {
     srcImg: "procat1",
-    title: "Beauty",
-    list: ["Makeup", "Skin Care", "Hair Care", "Fragrance", "Foot & Hand Care"],
+    title: "banner.lower.Beauty",
+    list: [
+      "category.Beauty.subcategory.Makeup",
+      "category.Beauty.subcategory.SkinCare",
+      "category.Beauty.subcategory.HairCare",
+      "category.Beauty.subcategory.Fragrance",
+      "category.Beauty.subcategory.PersonalCare",
+    ],
   },
   {
     srcImg: "procat2",
-    title: "Gatdets",
+    title: "banner.lower.Gatdets",
     list: [
-      "Camera",
-      "Cell Phones",
-      "Computers",
-      "GPS & Navigation",
-      "Headphones",
+      "category.Electronic.subcategory.Camera",
+      "category.Electronic.subcategory.CellPhones",
+      "category.Electronic.subcategory.Computers",
+      "category.Electronic.subcategory.GPS",
+      "category.Electronic.subcategory.Headphones",
     ],
   },
   {
     srcImg: "procat3",
-    title: "Home Decor",
-    list: ["Kitchen", "Dining Room", "Pantry", "Great Room", "Breakfast Nook"],
+    title: "banner.lower.HomeDecor",
+    list: [
+      "category.HomeKitchen.subcategory.Pantry",
+      "category.HomeKitchen.subcategory.LivingRoom",
+      "category.HomeKitchen.subcategory.Sunroom",
+      "category.HomeKitchen.subcategory.Bedroom",
+      "category.HomeKitchen.subcategory.PowderRoom",
+    ],
   },
 ];
 

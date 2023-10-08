@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function toDateTime(secs) {
   var t = new Date(1970, 0, 1); // Epoch
@@ -9,7 +10,7 @@ function toDateTime(secs) {
 export const CountDown = ({ curCount = 4500 }) => {
   // 4500s
   const [count, setCount] = useState(curCount);
-
+  const { t } = useTranslation();
   useEffect(() => {
     const timerId = setInterval(() => {
       setCount((c) => {
@@ -27,7 +28,7 @@ export const CountDown = ({ curCount = 4500 }) => {
 
   return (
     <div className="flex flex-col items-center mx-auto mt-4">
-      <h2 className="text-xl font-bold">OFFER ENDS AT</h2>
+      <h2 className="text-xl font-bold">{t("clock.offerend")}</h2>
       <div className="flex items-center gap-1 mt-2">
         <span className="w-10 h-10 bg-gray-300 inline-flex justify-center items-center text-xl font-bold text-slate-800">
           {Math.floor(count / (24 * 3600))}

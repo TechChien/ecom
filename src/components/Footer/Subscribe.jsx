@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export const Subscribe = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-gray-950 text-white py-8 md:py-16">
       <div className="container mx-auto">
@@ -6,11 +10,11 @@ export const Subscribe = () => {
           <div className=" md:w-1/2 px-4 md:py-2 md:flex md:justify-center">
             <div>
               <h1 className="text-white font-extrabold text-2xl md:text-4xl">
-                Join Out Newsletter
+                {t("footer.subscribe.jon")}
               </h1>
               <p className="text-slate-500">
-                Get Emails updates about our lastest shop and{" "}
-                <span className="text-red-300">special offers</span>
+                {t("footer.subscribe.adv")}{" "}
+                <span className="text-red-300">{t("footer.subscribe.so")}</span>
               </p>
             </div>
           </div>
@@ -19,10 +23,10 @@ export const Subscribe = () => {
               <form className="flex w-full mx-auto">
                 <input
                   className="py-2 px-3 rounded-md  lg:text-xl text-slate-950 outline-none sm:w-[22rem] md:w-[30rem]"
-                  placeholder="&#128231; Your email address"
+                  placeholder={"✉" + t("footer.subscribe.placeholder")}
                 />
                 <button className="bg-red-500 text-white -translate-x-2 rounded-r-md rounded-d-md text-sm lg:text-xl px-4 hover:bg-red-300 whitespace-nowrap">
-                  Sign Up
+                  {t("footer.subscribe.signup")}
                 </button>
               </form>
             </div>

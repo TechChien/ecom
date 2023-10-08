@@ -1,4 +1,4 @@
-export const ImageWord = ({ category, title, subtitle }) => {
+export const ImageWord = ({ category, title, subtitle, t }) => {
   return (
     <div className="absolute z-20 bottom-14 left-4 sm:bottom-20 sm:left-14 lg:bottom-[6rem] lg:left-[6rem]  ">
       <button className="bg-blue-900 text-xs lg:text-xl  text-white py-2 px-4 rounded-md hover:bg-blue-700 font-bold">
@@ -11,7 +11,7 @@ export const ImageWord = ({ category, title, subtitle }) => {
         {subtitle}
       </h2>
       <button className="text-white font-bold rounded-full text-xs sm:text-base  lg:text-xl px-3 py-2 lg:px-8 lg:py-4 bg-orange-600 mt-1 lg:mt-6 hover:bg-orange-400">
-        Shop Now
+        {t("banner.upper.Shop")}
       </button>
     </div>
   );
