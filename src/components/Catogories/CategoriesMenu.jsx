@@ -36,23 +36,31 @@ export const CategoriesMenu = (props) => {
   const [itemTitle, setItem] = useState(null);
   const [xp, setXp] = useState(0);
   const [parentH, setParentH] = useState(0);
-  const parentRef = useRef(null);
+  // const parentRef = useRef(null);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    if (parentRef) {
-      setXp(parentRef.current.offsetWidth);
-      setParentH(parentRef.current.offsetHeight);
-    }
-  }, [parentRef]);
+  // useEffect(() => {
+  //   if (parentRef) {
+  //     setXp(parentRef.current.offsetWidth);
+  //     setParentH(parentRef.current.offsetHeight);
+  //   }
+  // }, [parentRef]);
 
   const clickHandler = (title) => (e) => {
+    const ulDOM = document.querySelector("#categorymenu");
+    const p = ulDOM.getBoundingClientRect().width;
+    // ulDOM.getBoundingClientRect().left +
+    const h = ulDOM.getBoundingClientRect().height;
+
     setItem(() => title);
     if (title == itemTitle) {
       setOpen((o) => !o);
     } else {
       setOpen(true);
     }
+
+    setXp(p);
+    setParentH(h);
   };
   const closePopup = () => {
     if (itemTitle) setItem(() => null);
@@ -61,7 +69,7 @@ export const CategoriesMenu = (props) => {
 
   return (
     <>
-      <ul ref={parentRef} className="w-full">
+      <ul id="categorymenu" className="w-full">
         {listOfCatogory.map((item) => (
           <CategoriesItem
             key={item.icon.iconName}

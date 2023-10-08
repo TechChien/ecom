@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
+
 const context = {
   ["Beauty"]: {
-    bg: "/src/assets/menu/menu_bg1.jpg",
+    bg: "bg-menubg1",
     subcategory: [
       {
         items: [
@@ -19,7 +20,7 @@ const context = {
     ],
   },
   ["Electronic"]: {
-    bg: "/src/assets/menu/menu_bg2.jpg",
+    bg: "bg-menubg2",
     subcategory: [
       {
         items: [
@@ -36,7 +37,7 @@ const context = {
     ],
   },
   ["Women's Fashion"]: {
-    bg: "/src/assets/menu/menu_bg3.jpg",
+    bg: "bg-menubg3",
     subcategory: [
       {
         items: [
@@ -51,7 +52,7 @@ const context = {
     ],
   },
   ["Home & Kitchen"]: {
-    bg: "/src/assets/menu/menu_bg4.jpg",
+    bg: "bg-menubg4",
     subcategory: [
       {
         title: "category.HomeKitchen.subcategory.KitchenSection",
@@ -132,7 +133,6 @@ export const CategoriesPopMenu = ({ hoverEl, open, xp, parentH, hideFn }) => {
       <div
         onMouseLeave={hideFn}
         style={{
-          backgroundImage: `url(${bg})`,
           left: `${xp - 1}px`,
           top: 0,
           opacity: 1,
@@ -140,7 +140,7 @@ export const CategoriesPopMenu = ({ hoverEl, open, xp, parentH, hideFn }) => {
           zIndex: 30,
           minHeight: `${parentH}px`,
         }}
-        className={`absolute bg-cover bg-right-top`}
+        className={`absolute bg-cover bg-right-top ${bg}`}
       >
         <div className="grid grid-rows-2 grid-flow-col gap-x-12">
           {subcategory.map((sub) => {

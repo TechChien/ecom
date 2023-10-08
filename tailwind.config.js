@@ -78,6 +78,10 @@ export default {
         procat1: "url(/src/assets/thumbnail/banner/procat1.jpg)",
         procat2: "url(/src/assets/thumbnail/banner/procat2.jpg)",
         procat3: "url(/src/assets/thumbnail/banner/procat3.jpg)",
+        menubg1: "url(/src/assets/menu/menu_bg1.jpg)",
+        menubg2: "url(/src/assets/menu/menu_bg2.jpg)",
+        menubg3: "url(/src/assets/menu/menu_bg3.jpg)",
+        menubg4: "url(/src/assets/menu/menu_bg4.jpg)",
       },
       fontFamily: {
         sans: ["Lato", ...defaultTheme.fontFamily.sans],
