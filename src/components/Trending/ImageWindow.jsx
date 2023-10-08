@@ -1,5 +1,10 @@
 import { Heart } from "./Heart";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const modules = import.meta.glob([
+  "/src/assets/products/*.jpg",
+  "/src/assets/banner/*.jpg",
+]);
 
 export const ImageWindow = ({
   children,
@@ -9,14 +14,19 @@ export const ImageWindow = ({
   imageSrcPath = "/src/assets/products/",
 }) => {
   const [load, setLoad] = useState(false);
-
-  const handleLoad = (e) => {
-    if (!load) {
-      setLoad(true);
-    }
-  };
-
+  const [image, setImage] = useState("");
   const realImg = `${imageSrcPath}${bgImg}.jpg`;
+
+  useEffect(() => {
+    if (!load && image === "") {
+      if (typeof modules[realImg] === "function") {
+        modules[realImg]().then((mod) => {
+          setImage(mod.default);
+          setLoad(true);
+        });
+      }
+    }
+  }, [load, setLoad, image, setImage]);
 
   return (
     <>
@@ -24,14 +34,13 @@ export const ImageWindow = ({
         className={`w-full h-full  bg-${bgImg} bg-center bg-no-repeat bg-cover`}
       >
         <img
-          src={realImg}
+          src={image}
           className={`w-full h-full ${
             load ? "opacity-100" : "opacity-0"
           } transition-opacity duration-300 object-fit ease-in-out ${
             hover ? "hover:scale-110" : ""
           }`}
           loading="lazy"
-          onLoad={handleLoad}
         />
       </div>
       {heart ? <Heart /> : null}
