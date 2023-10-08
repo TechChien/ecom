@@ -16,7 +16,24 @@
     "cart": "購物車",
     "amount": "數量",
     "discount": "折購",
-    "summary": "總結"
+    "summary": "總結",
+    "shoppingCart": "購物車",
+    "item": "品項",
+    "price": "價格",
+    "qty": "數量",
+    "apply": "使用",
+    "coupoun": "優惠券"
+  },
+  "checkout": {
+    "shippinginfo": "運送資訊",
+    "emailaddress": "電子郵件地址",
+    "firstname": "名字",
+    "lastname": "姓氏",
+    "shippingaddress": "運送地址",
+    "phone": "電話號碼",
+    "ordernote": "訂單備註（選填）",
+    "placeorder": "下單",
+    "placeholder": "關於您的訂單的備註，例如交貨的特別說明"
   },
   "popupMenu": {
     "Women": {
@@ -268,5 +285,24 @@
   },
   "clock": {
     "offerend": "限時搶購"
+  },
+  "productDetail": {
+    "brands": "品牌",
+    "activity": "活動",
+    "material": "材質",
+    "gender": "性別",
+    "color": "顏色",
+    "size": "尺寸",
+    "running": "跑步",
+    "fleece": "羊毛",
+    "men": "男士",
+    "instock": "有庫存",
+    "addCart": "加入購物車",
+    "WISHLIST": "願望清單",
+    "SHARE": "分享",
+    "Info": "資訊",
+    "DETAILS": "詳細資訊",
+    "CUSTOMS": "尺碼",
+    "REVIEWS": "評論"
   }
 }

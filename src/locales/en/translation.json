@@ -16,7 +16,24 @@
     "cart": "Cart",
     "amount": "Amount",
     "discount": "Discount",
-    "summary": "Summary"
+    "summary": "Summary",
+    "shoppingCart": "Shopping Cart",
+    "item": "Item",
+    "price": "Price",
+    "qty": "Qty",
+    "apply": "Apply",
+    "coupoun": "coupoun"
+  },
+  "checkout": {
+    "shippinginfo": "Shipping Information",
+    "emailaddress": "Email Address",
+    "firtname": "First Name",
+    "lastname": "Last Name",
+    "shippingaddress": "Shipping Address",
+    "phone": "Phone Number",
+    "ordernote": "Order Notes (optional)",
+    "placeorder": "Place Order",
+    "placeholder": "Notes about your order, e.g special notes for delivery"
   },
   "popupMenu": {
     "Women": {
@@ -268,5 +285,24 @@
   },
   "clock": {
     "offerend": "OFFER ENDS AT"
+  },
+  "productDetail": {
+    "brands": "brands",
+    "activity": "activity",
+    "material": "material",
+    "gender": "gender",
+    "color": "Color",
+    "size": "Size",
+    "running": "Running",
+    "fleece": "Fleece",
+    "men": "Men",
+    "instock": "In Stock",
+    "addCart": "Add to Cart",
+    "WISHLIST": "WISHLIST",
+    "SHARE": "SHARE",
+    "Info": "INFORMATION",
+    "DETAILS": "DETAILS",
+    "CUSTOMS": "CUSTOMS",
+    "REVIEWS": "REVIEWS"
   }
 }

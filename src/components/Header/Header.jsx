@@ -22,7 +22,7 @@ const currencylist = [
 
 export const Header = () => {
   const [CUR, setCUR] = useState(currencylist[0]);
-  const [LAN, setLAN] = useState(languagelist[1]);
+  const [LAN, setLAN] = useState(languagelist[0]);
 
   const { t, i18n } = useTranslation();
 

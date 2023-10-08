@@ -9,24 +9,21 @@ import shoe2 from "../../assets/products/shoe1_1.jpg";
 import shoe3 from "../../assets/products/shoe5.jpg";
 import shoe4 from "../../assets/products/shoe1_3.jpg";
 
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+
 export const ProductDetail = () => {
+  const products = useSelector((state) => state.product.data);
+  const { t } = useTranslation();
   const images = [shoe1, shoe2, shoe3, shoe4];
 
   const product = {
-    productId: 5,
-    score: 5,
-    comments: 2251,
-    title: "Men Slip On Shoes Casual with Arch Support Insoles",
-    price: "80.90",
-    sold: 2975,
-    stock: 453,
-    originalPrice: "75.5",
-    bgImg: "shoe1",
+    ...products[4],
     information: {
       brands: "Nike",
-      activity: "Running",
-      material: "Fleece",
-      gender: "Men",
+      activity: "productDetail.running",
+      material: "productDetail.fleece",
+      gender: "productDetail.men",
     },
   };
 
@@ -56,9 +53,13 @@ export const ProductDetail = () => {
     <div className="flex flex-col  md:flex-row w-full gap-4">
       <ProductSlider images={images} />
       <ProductSelection {...product}>
-        <h3 className="md:text-xl lg:text-2xl font-bold mt-4">Color</h3>
+        <h3 className="md:text-xl lg:text-2xl font-bold mt-4">
+          {t("productDetail.color")}
+        </h3>
         <ChoseOne render={renderColorFn} type="color" />
-        <h3 className="md:text-xl lg:text-2xl font-bold mt-4">Size</h3>
+        <h3 className="md:text-xl lg:text-2xl font-bold mt-4">
+          {t("productDetail.size")}
+        </h3>
         <ChoseOne render={renderSizeFn} type="size" />
       </ProductSelection>
     </div>

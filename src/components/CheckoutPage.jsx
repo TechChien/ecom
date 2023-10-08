@@ -21,11 +21,13 @@ export const CheckoutPage = () => {
   return (
     <div className="flex flex-col md:flex-row gap-4 mt-4">
       <div className="w-full  md:w-1/2 drop-shadow-2xl">
-        <h1 className="text-2xl md:text-4xl font-bold">Shipping Information</h1>
+        <h1 className="text-2xl md:text-4xl font-bold">
+          {t("checkout.shippinginfo")}
+        </h1>
         <form className="border bg-slate-50 flex flex-col gap-3 mt-4 p-4">
           <label className="font-bold text-xl md:text-2xl" htmlFor="email">
             <span className="relative before:absolute before:content-['*'] before:text-red-600 before:-right-5 before:top-0">
-              Email Address
+              {t("checkout.emailaddress")}
             </span>
           </label>
           <input
@@ -35,7 +37,7 @@ export const CheckoutPage = () => {
           />
           <label className="font-bold text-xl md:text-2xl" htmlFor="firstname">
             <span className="relative before:absolute before:content-['*'] before:text-red-600 before:-right-5 before:top-0">
-              First Name
+              {t("checkout.firstname")}
             </span>
           </label>
           <input
@@ -45,7 +47,7 @@ export const CheckoutPage = () => {
           />
           <label className="font-bold text-xl md:text-2xl" htmlFor="lastname">
             <span className="relative before:absolute before:content-['*'] before:text-red-600 before:-right-5 before:top-0">
-              Last Name
+              {t("checkout.lastname")}
             </span>
           </label>
           <input
@@ -58,7 +60,7 @@ export const CheckoutPage = () => {
             htmlFor="streetaddress"
           >
             <span className="relative before:absolute before:content-['*'] before:text-red-600 before:-right-5 before:top-0">
-              Shipping Address
+              {t("checkout.shippingaddress")}
             </span>
           </label>
           <input
@@ -68,7 +70,7 @@ export const CheckoutPage = () => {
           />
           <label className="font-bold text-xl md:text-2xl" htmlFor="name">
             <span className="relative before:absolute before:content-['*'] before:text-red-600 before:-right-5 before:top-0">
-              Phone Number
+              {t("checkout.phone")}
             </span>
           </label>
           <input
@@ -77,17 +79,17 @@ export const CheckoutPage = () => {
             className="text-xl p-2 border rounded-md outline-none"
           />
           <label className="font-bold text-xl md:text-2xl" htmlFor="name">
-            Order Notes (optional)
+            {t("checkout.ordernote")}
           </label>
           <textarea
             id="companyname"
             name="companyname"
             rows={5}
             className="text-lg md:text-xl p-2 border rounded-md outline-none"
-            placeholder="Notes about your order, e.g special notes for delivery"
+            placeholder={t("checkout.placeholder")}
           />
           <button className="bg-red-500 hover:bg-red-400 p-4 text-xl md:text-2xl text-white rounded-full">
-            Place Order
+            {t("checkout.placeorder")}
           </button>
         </form>
       </div>

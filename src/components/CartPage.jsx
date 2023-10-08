@@ -63,7 +63,9 @@ export const CartPage = () => {
   return (
     <div>
       <Breadcrumbs />
-      <h1 className="font-extrabold text-2xl lg:text-3xl">Shopping Cart</h1>
+      <h1 className="font-extrabold text-2xl lg:text-3xl">
+        {t("cart.shoppingCart")}
+      </h1>
       <div className="flex flex-col md:flex-row  gap-4 mt-6">
         <div className="md:hidden w-full flex flex-col gap-2">
           {buyItems.map((item) => (
@@ -104,10 +106,10 @@ export const CartPage = () => {
         <table className="hidden md:table w-4/5">
           <thead className="bg-slate-300">
             <tr className="lg:text-2xl md:text-xl text-slate-600">
-              <th className="lg:p-6 w-3/5">Item</th>
-              <th className="lg:p-6 ">Price</th>
-              <th className="lg:p-6 w-1/5">Qty</th>
-              <th className="lg:p-6">Subtotal</th>
+              <th className="lg:p-6 w-3/5">{t("cart.item")}</th>
+              <th className="lg:p-6 ">{t("cart.price")}</th>
+              <th className="lg:p-6 w-1/5">{t("cart.qty")}</th>
+              <th className="lg:p-6">{t("cart.subtotal")}</th>
               <th></th>
             </tr>
           </thead>
@@ -161,30 +163,30 @@ export const CartPage = () => {
           <div className="flex flex-col lg:flex-row  gap-3 lg:gap-0 items-start  lg:items-stretch  rounded-t-md ">
             <input
               className="py-2 px-3 rounded-md lg:rounded-none lg:rounded-tl-md   lg:text-md text-slate-950 outline-none w-full border-2 border-black"
-              placeholder="coupoun"
+              placeholder={t("cart.coupoun")}
             />
 
             <button className="bg-black  text-white lg:text-md rounded-full lg:rounded-none lg:rounded-tr-md lg:px-2 lg:py-0 px-6 py-2 hover:bg-slate-900">
-              Apply
+              {t("cart.apply")}
             </button>
           </div>
           <div className="w-full bg-slate-300 p-4 rounded-b-md mt-2 lg:mt-0">
             <h1 className="md:text-lg lg:text-2xl text-black font-bold">
-              SUMMARY
+              {t("cart.summary")}
             </h1>
             <ul className="flex flex-col gap-3 lg:text-xl font-bold mt-4">
               <li className="w-full flex flex-col xl:flex-row">
-                <h2 className="md:text-lg">Subtotal</h2>
+                <h2 className="md:text-lg"> {t("cart.subtotal")}</h2>
                 <span className="ms-auto md:text-lg">${subTotal}</span>
               </li>
               <li className="w-full flex  flex-col xl:flex-row">
-                <h2 className="md:text-lg">Discount</h2>
+                <h2 className="md:text-lg">{t("cart.discount")}</h2>
                 <span className="ms-auto md:text-lg">
                   -${Math.abs(discount)}
                 </span>
               </li>
               <li className="w-full flex  flex-col xl:flex-row">
-                <h2 className="md:text-lg">Total</h2>
+                <h2 className="md:text-lg">{t("header.total")}</h2>
                 <span className="ms-auto md:text-lg">
                   ${subTotal + discount}
                 </span>
@@ -192,7 +194,7 @@ export const CartPage = () => {
               <li>
                 <Link to="/Checkout">
                   <button className="p-2 lg:p-4 w-full bg-blue-950 rounded-full text-white hover:bg-blue-800">
-                    Checkout
+                    {t("cart.checkout")}
                   </button>
                 </Link>
               </li>

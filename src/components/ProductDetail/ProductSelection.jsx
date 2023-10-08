@@ -13,6 +13,8 @@ import { TableDisplay } from "./TableDisplay";
 import { Reviews } from "./Reviews";
 import { ReviewForm } from "./ReviewForm";
 
+import { useTranslation } from "react-i18next";
+
 const headerItem = ["Size", "Bust", "Walst", "Hip"];
 
 const dataItems = [
@@ -51,6 +53,8 @@ const selectReducer = (state, action) => {
 };
 
 export const ProductSelection = ({ children, ...props }) => {
+  const { t } = useTranslation();
+
   const [selectState, selectDispatch] = useReducer(selectReducer, {
     color: "",
     size: "",
@@ -86,10 +90,10 @@ export const ProductSelection = ({ children, ...props }) => {
 
   return (
     <div className="w-full md:w-1/2">
-      <h1 className="text-xl  lg:text-4xl font-extrabold">{title}</h1>
+      <h1 className="text-xl  lg:text-4xl font-extrabold">{t(title)}</h1>
       <Stars {...{ score, comments }} />
       <span className="bg-slate-300 text-green-500 p-2 font-bold inline-block mt-4 rounded-md">
-        In Stock
+        {t("productDetail.instock")}
       </span>
       <ProductPrice {...{ price, originalPrice }} />
       <selctContext.Provider value={{ selectState, selectDispatch }}>
@@ -103,43 +107,47 @@ export const ProductSelection = ({ children, ...props }) => {
             onClick={handleAddToCart}
             className="w-full p-4 md:py-4 bg-red-500 rounded-full md:text-2xl text-white hover:bg-red-400 "
           >
-            Add to Cart
+            {t("productDetail.addCart")}
           </button>
         </div>
       </selctContext.Provider>
       <div className="flex gap-6 mt-12">
         <div className="flex gap-2 cursor-pointer">
           <FontAwesomeIcon className="md:text-3xl  text-xl" icon={faHeart} />
-          <span className="text-xl md:text-2xl font-extrabold">WISHLIST</span>
+          <span className="text-xl md:text-2xl font-extrabold">
+            {t("productDetail.WISHLIST")}
+          </span>
         </div>
         <div className="flex gap-2  cursor-pointer">
           <FontAwesomeIcon
             className="md:text-3xl  text-xl"
             icon={faShareNodes}
           />
-          <span className="text-xl md:text-2xl font-extrabold">SHARE</span>
+          <span className="text-xl md:text-2xl font-extrabold">
+            {t("productDetail.SHARE")}
+          </span>
         </div>
       </div>
       <hr />
       <div className="flex flex-col gap-6 mt-12">
-        <Accordion title="INFORMATION">
+        <Accordion title={t("productDetail.Info")}>
           <div className="flex mt-4 gap-4 ps-6">
             <ul className="md:text-xl flex flex-col gap-2">
-              <li>BRANDS</li>
-              <li>ACTIVITY</li>
-              <li>MATERIAL</li>
-              <li>GENDER</li>
+              <li>{t("productDetail.brands")}</li>
+              <li>{t("productDetail.activity")}</li>
+              <li>{t("productDetail.material")}</li>
+              <li>{t("productDetail.gender")}</li>
             </ul>
             <ul className="md:text-xl  flex flex-col gap-2">
-              <li>{brands}</li>
-              <li>{activity}</li>
-              <li>{material}</li>
-              <li>{gender}</li>
+              <li>{t(brands)}</li>
+              <li>{t(activity)}</li>
+              <li>{t(material)}</li>
+              <li>{t(gender)}</li>
             </ul>
           </div>
         </Accordion>
         <hr />
-        <Accordion title="DETAILS">
+        <Accordion title={t("productDetail.DETAILS")}>
           <div className="mt-4 ps-6">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum,
             repellendus nam eligendi adipisci sapiente voluptatum laudantium,
@@ -148,13 +156,13 @@ export const ProductSelection = ({ children, ...props }) => {
           </div>
         </Accordion>
         <hr />
-        <Accordion title="CUSTOMS">
+        <Accordion title={t("productDetail.CUSTOMS")}>
           <div className=" mt-4  ps-2">
             <TableDisplay header={headerItem} data={dataItems} />
           </div>
         </Accordion>
         <hr />
-        <Accordion title="REVIEWS">
+        <Accordion title={t("productDetail.REVIEWS")}>
           <div className="mt-4 ps-6 w-full">
             <div className="flex items-center">
               <span className="pe-0 text-3xl md:text-6xl font-extrabold ">
