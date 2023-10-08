@@ -10,23 +10,19 @@ import { ChoseOne } from "./ProductDetail/ChoseOne";
 import { CountDown } from "./Trending/CountDown";
 import { ProductStock } from "./Trending/ProductStock";
 
+import { useSelector } from "react-redux";
+
 import apparel4 from "../assets/products/apparel4.jpg";
 import apparel5 from "../assets/products/apparel5.jpg";
 import apparel6 from "../assets/products/apparel6.jpg";
 
 export const ProductOnSale = () => {
+  const products = useSelector((state) => state.product.data);
+
   const images = [apparel4, apparel5, apparel6];
 
   const product = {
-    productId: 4,
-    score: 5,
-    comments: 10,
-    title: "Womens Summer Boho Floral",
-    price: "118.9",
-    originalPrice: "189.9",
-    sold: 2109,
-    stock: 179,
-    bgImg: "apparel4",
+    ...products[3],
     information: {
       brands: "Zara",
       activity: "Formal",
