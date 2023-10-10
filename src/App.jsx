@@ -20,8 +20,8 @@ const router = createBrowserRouter(
       <Route path=":category/shoe1" element={<ProductPage />} />
       <Route path=":category/apparel4" element={<ProductOnSale />} />
       <Route path=":category" element={<CateoryPage />} />
-      <Route path="/Cart" element={<CartPage />} />
-      <Route path="/Checkout" element={<CheckoutPage />} />
+      <Route path="Cart" element={<CartPage />} />
+      <Route path="Checkout" element={<CheckoutPage />} />
       {/* <Route path="/I18n" element={<I18nPage />} /> */}
     </Route>
   )
