@@ -8,6 +8,7 @@ import { deleteCart } from "../../../redux/reducer/cartSlice";
 import { ImageWindow } from "../../Trending/ImageWindow";
 import { useTranslation } from "react-i18next";
 
+import { roundToTwo } from "../../utils/roundTwo";
 export const PopupContent = ({ parentImg, hideFn }) => {
   const { t } = useTranslation();
 
@@ -80,7 +81,10 @@ export const PopupContent = ({ parentImg, hideFn }) => {
           {t("cart.subtotal")}
         </h2>
         <h3 className="mt-2 text-2xl text-slate-500">
-          ${buyItems.reduce((acc, b) => acc + +b.price * +b.amount, 0)}
+          $
+          {roundToTwo(
+            buyItems.reduce((acc, b) => acc + +b.price * +b.amount, 0)
+          )}
         </h3>
       </div>
       <hr className="mt-2" />
@@ -88,18 +92,12 @@ export const PopupContent = ({ parentImg, hideFn }) => {
         {parentImg === "cart" ? (
           <>
             <Link to="/Checkout">
-              <button
-                onClick={hideFn}
-                className="p-2 w-full bg-red-500 rounded-full text-white hover:bg-red-400"
-              >
+              <button className="p-2 w-full bg-red-500 rounded-full text-white hover:bg-red-400">
                 {t("cart.checkout")}
               </button>
             </Link>
             <Link to="/Cart">
-              <button
-                onClick={hideFn}
-                className="p-2 w-full bg-purple-800 rounded-full text-white hover:bg-purple-600"
-              >
+              <button className="p-2 w-full bg-purple-800 rounded-full text-white hover:bg-purple-600">
                 {t("cart.viewcart")}
               </button>
             </Link>

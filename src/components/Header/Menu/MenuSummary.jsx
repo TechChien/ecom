@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { roundToTwo } from "../../utils/roundTwo";
 
 export const MenuSummary = () => {
   const { t } = useTranslation();
@@ -17,7 +18,8 @@ export const MenuSummary = () => {
     <div className="flex flex-col">
       <span className="text-sm">{t("header.total")}</span>
       <span className="text-xl">
-        ${buyItems.reduce((acc, b) => acc + +b.price * +b.amount, 0)}
+        $
+        {roundToTwo(buyItems.reduce((acc, b) => acc + +b.price * +b.amount, 0))}
       </span>
     </div>
   );

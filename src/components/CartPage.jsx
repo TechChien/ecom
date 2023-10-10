@@ -9,7 +9,7 @@ import { updateCartItemAmount, deleteCart } from "../redux/reducer/cartSlice";
 import { ImageWindow } from "./Trending/ImageWindow";
 
 import { useTranslation } from "react-i18next";
-
+import { roundToTwo } from "./utils/roundTwo";
 export const CartPage = () => {
   const items = useSelector((state) => state["cart"]?.items);
   const products = useSelector((state) => state.product.data);
@@ -177,7 +177,9 @@ export const CartPage = () => {
             <ul className="flex flex-col gap-3 lg:text-xl font-bold mt-4">
               <li className="w-full flex flex-col xl:flex-row">
                 <h2 className="md:text-lg"> {t("cart.subtotal")}</h2>
-                <span className="ms-auto md:text-lg">${subTotal}</span>
+                <span className="ms-auto md:text-lg">
+                  ${roundToTwo(subTotal)}
+                </span>
               </li>
               <li className="w-full flex  flex-col xl:flex-row">
                 <h2 className="md:text-lg">{t("cart.discount")}</h2>
@@ -188,7 +190,7 @@ export const CartPage = () => {
               <li className="w-full flex  flex-col xl:flex-row">
                 <h2 className="md:text-lg">{t("header.total")}</h2>
                 <span className="ms-auto md:text-lg">
-                  ${subTotal + discount}
+                  ${roundToTwo(subTotal + discount)}
                 </span>
               </li>
               <li>
